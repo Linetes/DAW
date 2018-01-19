@@ -1,0 +1,32 @@
+
+header {
+    font-family: 'Over the Rainbow';
+}
+
+#fresa {
+    font-family: 'Indie Flower', cursive;
+    color: skyblue;
+    text-decoration: inherit;
+    font-size: 24px;
+}
+
+.titulo {
+    font-family: 'Limelight', cursive;
+    color: dimgray;
+    text-align: center;
+    font-size: 60px;
+}
+
+h2.titulo {
+    font-family: 'Limelight', cursive;
+    color: deeppink !important;
+    text-align: center;
+    font-size: 60px;
+}
+
+h2 {
+    font-family: 'Limelight', cursive;
+    color: deepskyblue;
+    text-align: center;
+    font-size: 60px;
+}
