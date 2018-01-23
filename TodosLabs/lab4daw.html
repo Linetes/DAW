@@ -15,7 +15,6 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="ministyles.css">
       
-      
     <title>A01207499</title>
       
     <style type="text/css">
@@ -88,7 +87,24 @@
           <div class="container">
             <h1 class="display-4">Ejercicios de JavaScript</h1>
                 <div class="alert alert-light" role="alert">
-                    
+                    <div class="row">
+                        <div class="col">
+                            <button onclick="one()" class="btn btn-primary">Ej 1</button>
+                            <br>
+                            <button onclick="two()" class="btn btn-secondary">Ej 2</button>
+                            <br>
+                            <button onclick="three([16,24,-57,0,0,0,26])" class="btn btn-success">Ej 3</button>
+                            <br>
+                            <button onclick="four([[2,16,4,58,39],[29,57,21,12]])" class="btn btn-danger">Ej 4</button>
+                            <br>
+                            <button onclick="five(123456789)" class="btn btn-warning">Ej 5</button>
+                            <br>
+                            <button onclick="six()" class="btn btn-info">Ej 6</button>
+                        </div>
+                        <div class="col">
+                            <h3 id="res"></h3>
+                        </div>
+                    </div>    
                 </div>
 
           </div>
@@ -179,10 +195,15 @@
     </section>
     
 
+    
+  </body>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-  </body>
+    
+    <!-- My JS -->  
+    <script type = "text/javascript" src = "codigo.js"></script>  
+      
 </html>
