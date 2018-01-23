@@ -76,7 +76,7 @@
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <div class="row">
-                        <h1 class="display-4">Laboratorio 3: CSS</h1>
+                        <h1 class="display-4">Laboratorio 4: JavaScript</h1>
                 </div>
             </div>
         </div>
@@ -86,14 +86,9 @@
     <section class="container">
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            <h1 class="display-4">Pruebas de CSS</h1>
+            <h1 class="display-4">Ejercicios de JavaScript</h1>
                 <div class="alert alert-light" role="alert">
-                    <p class="titulo">Título bien chido</p>
-                    <p id="fresa">Escritura bien fresa.</p>
-                    <p style="font-size: 20pt; color: #6666ff">Escritura no tan fresa.</p>
-                    <h3>Escritura medio fresa.</h3>
-                    <h2 class="titulo">Título súper fresa</h2>
-                    <h2>Títlo medio fresa</h2>
+                    
                 </div>
 
           </div>
@@ -104,46 +99,79 @@
               <div class="row">
                 <div class="col">
                   <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </div>
+                    <div class="card-header">¿Qué diferencias y semejanzas hay entre Java y JavaScript?</div>
                     <div class="card-body">
-                        <p class="card-text">Es muy recomendable su uso si tienes varios CSS o si usas un framework porque le pone prioridad a lo que quieres. Si quieres combinar algo como paragraph con algo que tenga id para darle formato, lo que tenga important va a tener prioridad.</p>
+                        <p class="card-text">Java es un lenguaje de programación orientado a objetos, mientras JavaScript es un lenguaje de "scripting" orientado objetos. Java crea aplicaciones en una máquina virtual, mientras JavaScript funciona en el browser. Java es de Oracle, mientras que JavaScript de Netscape. En otras palabras, lo único que tienen en común es el nombre "Java". Todo lo demás es diferente.</p>
                     </div>
                   </div>
                 </div>
                 <div class="col">
                   <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</div>
+                    <div class="card-header">¿Qué métodos tiene el objeto Date?</div>
                     <div class="card-body">
-                        <p class="card-text">El fondo de pantalla puede ser un problema si no se cuida porque no todas las pantallas tienen la misma definición. También en términos de diseño, un fondo muy brillante o deslumbrante puede afectar a la lectura de la página. También es difícil ajustar el tamaño de las imágenes, es mejor editarla antes.</p>
+                        <ul>
+                            <li>getDate() - Regresa el día del mes</li>
+                            <li>getDay() - Regresa el día de la semana</li>
+                            <li>getFullYear() - Regresa el año</li>
+                            <li>getHours() - Regresa la hora</li>
+                            <li>now() - Regresa el número de milisegundos desde el 01/01/1970</li>
+                            <li>setDate() - Pone el día del mes que gustes</li>
+                        </ul>
                     </div>
                   </div>
                 </div>
                 <div class="col">
                   <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</div>
+                    <div class="card-header">¿Qué métodos tienen los arreglos?</div>
                     <div class="card-body">
-                        <p class="card-text">Creo que lo mejor es usar % ya que px y pt ya tienen un tamaño preterminado y las resoluciones de pantallas varían, así que para una compu 20 px puede ser muy grande y para otra muy pequeño, mientras % se adapta a la resolución.</p>
+                        <ul>
+                            <li>concat() - Concatena 2 arreglos</li>
+                            <li>every() - Checa si cada elemento del arreglo pasa una prueba</li>
+                            <li>fill() - Llena los elementos en un arreglo con un valor estático</li>
+                            <li>filter() - Filtra los elementos de un arreglo con una prueba</li>
+                            <li>find() - Regresa el primer elemento de un arreglo que pasa una prueba</li>
+                            <li>indexOf() - Busca en el arreglo un elemento y te regresa la posición</li>
+                        </ul>
                     </div>
                   </div>
                 </div>
               </div>
+                
               <div class="row">
                 <div class="col">
                   <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</div>
+                    <div class="card-header">¿Cómo se declara una variable con alcance local dentro de una función?</div>
                     <div class="card-body">
-                        <p class="card-text">Mejora el rendimiento porque reduce el tamaño del archivo borrando los white-spaces y comentarios. Esto hace que la página se carge más rápido.</p>
+                        <p class="card-text">Se tiene que declarar dentro de la función y se declara como:</p>
+                        <p>var NAME = "";</p>
                     </div>
                   </div>
-                </div> 
+                </div>
+                <div class="col">
+                  <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</div>
+                    <div class="card-body">
+                        <p class="card-text">Que se pueden usar en cualquier función y que si el valor es modificado, ese se guarda globalmente.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares?¿Para qué podrías utilizar esto en una aplicación web?</div>
+                    <div class="card-body">
+                        <p class="card-text">exec() - Hace la prueba si hace match el string y regresa el primer match o test() - Hace la prueba si hace match el string y regresa verdadero o falso. Se podría usar para la barra de Search dentro de una aplicación web.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
           <div class="jumbotron jumbotron-fluid">
               <div class="container">
                 <h1 class="display-4">Bibliografía:</h1>
-                <p class="lead">Chandra, P.(2013). 10 Quick Tips to Make CSS Load Faster. Quick Online Tips. Obtenido en: http://www.quickonlinetips.com/archives/2013/05/css-files-load-faster/</p>
-                <p class="lead">Google Fonts. Obtenido en: https://fonts.google.com</p>
-                <p class="lead">NA.(2018). CSS. W3Schools. Obtenido en: https://www.w3schools.com/html/html_form_attributes.asp</p>  
-                <p class="lead">Coyier, C.(2011). When Using !important is The Right Choice. CSS-Tricks. Obtenido en: https://css-tricks.com/when-using-important-is-the-right-choice/</p>   
+                <p class="lead">NA.(2018). Ámbito de la variable (JavaScript). Microsoft. Obtenido en: https://msdn.microsoft.com/es-es/library/bzt2dkta(v=vs.94).aspx</p>
+                <p class="lead">NA.(2018). How is JavaScript different from Java? Java Oracle. Obtenido en: https://www.java.com/en/download/faq/java_javascript.xml</p>
+                <p class="lead">NA.(2018). JavaScript Date Reference. W3Schools. Obtenido en: https://www.w3schools.com/jsref/jsref_obj_date.asp</p>
+                <p class="lead">NA.(2018). JavaScript Regular Expressions. W3Schools. Obtenido en: https://www.w3schools.com/js/js_regexp.asp</p>
+                <p class="lead">NA.(2018). JavaScript Array Reference. W3Schools. Obtenido en: https://www.w3schools.com/jsref/jsref_obj_array.asp</p>  
               </div>
           </div>
         </div>
