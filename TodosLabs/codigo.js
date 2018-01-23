@@ -53,7 +53,7 @@ function four(arr){
             j = j + arr[i][n];
         }
         j = Math.floor(j/aux);
-        str = str + "<br>El promedio del renglon: " + (i+1) + " es: " + j;
+        str = str + "El promedio del renglon " + (i+1) + " es: " + j + "<br>";
         res.push(j);
     }
     document.getElementById("res").innerHTML = str;
