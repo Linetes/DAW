@@ -72,5 +72,7 @@ function five(num) {
     return inv;
 }
 
-function six() {
+function six(str1,str2,num,str3) {
+    var person ={firstName: str1,lastName: str2, age: num, eyeColor:str3};
+    document.getElementById("res").innerHTML = "Nombre= " + person.firstName + "<br>Apellido= " + person.lastName + "<br>Edad= " + person.age + "<br>Color de ojos= " + person.eyeColor;
 } 
