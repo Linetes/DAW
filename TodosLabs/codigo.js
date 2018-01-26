@@ -79,7 +79,7 @@ function six(str1,str2,num,str3) {
 
 function check() {
     if(document.getElementById('password').value === document.getElementById('retype_password').value) {
-        document.getElementById('message').innerHTML = "Account created Successfully";
+        document.getElementById('message').innerHTML = "Account created successfully";
     } else {
         document.getElementById('message').innerHTML = "Passwords do not match";
     }
