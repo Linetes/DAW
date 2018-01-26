@@ -73,72 +73,43 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">  
           <li class="nav-item active">
-            <a class="nav-link" href="register.html">Register <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="tienda.html">Register <span class="sr-only">(current)</span></a>
           </li>
         </ul>    
       </div>
     </nav>
-    <!-- Navbar --> 
-      
-    <!-- Título -->
-    <header>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <div class="row">
-                        <h1 class="display-4">Lab 5: Programación orientada a eventos</h1>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Navbar -->  
 
     <!-- Artículo -->  
     <section class="container">
-
         <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <div class="row">
-                <div class="col">
-                  <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</div>
-                    <div class="card-body">
-                        <p class="card-text">Porque si el usuario ingresa un input erróneo que no esté dentro de los inputs válidos, mandarlos al servidor sólo para que diga que no es un input válido es una pérdida de tiempo. Con esto haces que los inputs inválidos se detectan más rápido y así eficientas el sistema.</p>
-                    </div>
-                  </div>
+          <div class="container">
+            <p class="titulo">Create an Account</p>
+            <div class="alert alert-light" role="alert">
+                <label for="Username">Username</label>
+                <div class="input-group mb-3">
+                    <input type="username" class="form-control" placeholder="username" id="Username">
                 </div>
-                <div class="col">
-                  <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</div>
-                    <div class="card-body">
-                        <p>Desabilitando JavaScript en el Navegador.</p>
-                    </div>
-                  </div>
+                <label for="Email">Email address</label>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="email@example.com">
                 </div>
-                <div class="col">
-                  <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</div>
-                    <div class="card-body">
-                        <p>Porque aunque desabilites JS el input debe ir al navegador y validarlo, es sólo para que tarde menos tiempo si el input no es válido. Es una tontería desabilitarlo porque como usuario, el proceso de validar es más tardado.</p>
-                    </div>
-                  </div>
+                <label for="Username">Password</label>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="password" id="Password" onchange='pass();'>
                 </div>
-              </div>
-                
-          <div class="jumbotron jumbotron-fluid">
-              <div class="container">
-                <h1 class="display-4">Bibliografía:</h1>
-                <p class="lead">Mauricio Lazcano. "Validar formularios con JavaScript". http://michelletorres.mx/validar-formularios-con-javascript/. 07/06/2016.[25/01/2018]</p>
-                <p class="lead">Julian. "saltar validacion javascript". https://www.clubdelphi.com/foros/showthread.php?t=65438. 15/12/2009. [25/01/2018]</p>
-                <p class="lead">NA.(2018). JavaScript Date Reference. W3Schools. Obtenido en: https://www.w3schools.com/jsref/jsref_obj_date.asp</p>
-                <p class="lead">NA.(2018). JavaScript Regular Expressions. W3Schools. Obtenido en: https://www.w3schools.com/js/js_regexp.asp</p>
-                <p class="lead">NA.(2018). JavaScript Array Reference. W3Schools. Obtenido en: https://www.w3schools.com/jsref/jsref_obj_array.asp</p>  
-              </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="retypePassword" id="Password2" onchange='pass();'>
+                </div> 
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                        <label class="form-check-label" for="dropdownCheck2">Send notifications to e-mail on updates</label>
+                    </div>
+                <button type="button-centered" class="btn btn-primary btn-lg" value="registration" id="create" disabled>Create Account </button>
+            </div>
           </div>
         </div>
-      </div>
     </section>
-    
-
-    
   </body>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

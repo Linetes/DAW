@@ -76,3 +76,12 @@ function six(str1,str2,num,str3) {
     var person ={firstName: str1,lastName: str2, age: num, eyeColor:str3};
     document.getElementById("res").innerHTML = "Nombre= " + person.firstName + "<br>Apellido= " + person.lastName + "<br>Edad= " + person.age + "<br>Color de ojos= " + person.eyeColor;
 } 
+
+function pass() {
+    if (document.getElementById('password').value ==
+            document.getElementById('retypePassword').value) {
+        document.getElementById('create').disabled = false;
+    } else {
+        document.getElementById('create').disabled = true;
+    }
+}
