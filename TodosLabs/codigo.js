@@ -77,11 +77,10 @@ function six(str1,str2,num,str3) {
     document.getElementById("res").innerHTML = "Nombre= " + person.firstName + "<br>Apellido= " + person.lastName + "<br>Edad= " + person.age + "<br>Color de ojos= " + person.eyeColor;
 } 
 
-function pass() {
-    if (document.getElementById('password').value ==
-            document.getElementById('retypePassword').value) {
-        document.getElementById('create').disabled = false;
+function check() {
+    if(document.getElementById('password').value === document.getElementById('retype_password').value) {
+        document.getElementById('message').innerHTML = "Account created Successfully";
     } else {
-        document.getElementById('create').disabled = true;
+        document.getElementById('message').innerHTML = "Passwords do not match";
     }
 }

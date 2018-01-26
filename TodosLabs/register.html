@@ -88,7 +88,7 @@
             <div class="alert alert-light" role="alert">
                 <label for="Username">Username</label>
                 <div class="input-group mb-3">
-                    <input type="username" class="form-control" placeholder="username" id="Username">
+                    <input type="username" class="form-control" placeholder="Username" id="username">
                 </div>
                 <label for="Email">Email address</label>
                 <div class="input-group mb-3">
@@ -96,16 +96,17 @@
                 </div>
                 <label for="Username">Password</label>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="password" id="Password" onchange='pass();'>
+                    <input type="password" class="form-control" placeholder="Password" id="password">
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="retypePassword" id="Password2" onchange='pass();'>
+                    <input type="password" class="form-control" placeholder="Retype Password" id="retype_password">
                 </div> 
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="dropdownCheck2">
                         <label class="form-check-label" for="dropdownCheck2">Send notifications to e-mail on updates</label>
                     </div>
-                <button type="button-centered" class="btn btn-primary btn-lg" value="registration" id="create" disabled>Create Account </button>
+                <button type="button-centered" class="btn btn-primary btn-lg" onclick='check();'>Create Account </button>
+                <span id='message'></span>
             </div>
           </div>
         </div>
