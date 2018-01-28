@@ -94,3 +94,14 @@ function check() {
         document.getElementById('message').innerHTML = "Passwords do not match";
     }
 }
+
+function check2() { 
+    var includesAt = /@./g;
+    var x = document.getElementById("email");
+    if (x.value.match(includesAt)){
+        document.getElementById('message').innerHTML = "Valid Email";    
+    }    
+    else {
+        document.getElementById('message').innerHTML = "Invalid Email";
+    }
+}
