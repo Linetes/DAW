@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
       
     <!-- My CSS -->
-    <link rel="stylesheet" href="ministyles.css">
+    <link rel="stylesheet" href="../CSS/Styles.css">
       
     <title>A01207499</title>
       
@@ -29,7 +29,7 @@
     
     <!-- Navbar --> 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index.html">César Buenfil</a>
+      <a class="navbar-brand" href="/index.html">César Buenfil</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -37,55 +37,55 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html">Home<span class="sr-only">(current)</span></a>
           </li>
           
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="/index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               DAW
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="lab1daw.html">Laboratorio 1: Introducción</a>
+              <a class="dropdown-item" href="../DAW/lab1daw.html">Laboratorio 1: Introducción</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="lab3daw.html">Laboratorio 3: CSS</a>
+              <a class="dropdown-item" href="../DAW/lab3daw.html">Laboratorio 3: CSS</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="lab4daw.html">Laboratorio 4: JavaScript</a>
+              <a class="dropdown-item" href="../DAW/lab4daw.html">Laboratorio 4: JavaScript</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="lab5daw.html">Laboratorio 5: Programación orientada a eventos</a>    
+              <a class="dropdown-item" href="../DAW/lab5daw.html">Laboratorio 5: Programación orientada a eventos</a>    
             </div>
           </li>
             
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="/index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               BD
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="lab1bd.html">Investigación 1: Ciclo de vida y de desarrollo de los sistemas de información</a>
+              <a class="dropdown-item" href="../BD/lab1bd.html">Investigación 1: Ciclo de vida y de desarrollo de los sistemas de información</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="lab2bd.html">Cuestionario 1: BD vs DBMS</a>
+              <a class="dropdown-item" href="../BD/lab2bd.html">Cuestionario 1: BD vs DBMS</a>
             </div>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="tienda.html">Store <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="../DAW/tienda.html">Store<span class="sr-only">(current)</span></a>
           </li>
             
         </ul>
         <ul class="nav navbar-nav navbar-right">  
-          <li class="nav-item active">
-            <a class="nav-link" href="register.html">Register <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="../DAW/register.html">Register<span class="sr-only">(current)</span></a>
           </li>
         </ul>    
       </div>
     </nav>
-    <!-- Navbar --> 
+    <!-- Navbar -->  
       
     <!-- Título -->
     <header>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <div class="row">
-                        <h1 class="display-4">Lab 5: Programación orientada a eventos</h1>
+                        <h1 class="display-4">Lab 6: Documentos dinámicos con JavaScript</h1>
                 </div>
             </div>
         </div>
@@ -95,55 +95,79 @@
     <section class="container">
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            <h1 class="display-4">Ejercicio Extra</h1>
+            <h1 class="display-4">Ejercicios</h1>
                 <div class="alert alert-light" role="alert">
-                    <div class="row">
-                        <div class="col">
-                            <div class="container">
-                                <p class="titulo">Check if Email is valid</p>
-                                <div class="alert alert-light" role="alert">
-                                    <label for="Email">Email address</label>
-                                    <div class="input-group mb-3">
-                                        <input type="email" class="form-control" id="email" placeholder="email@example.com">
-                                    </div> 
-                                    <button type="button-centered" class="btn btn-primary btn-lg" onclick='check2();'>Check</button>
-                                    <span id='message'></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <h3 id="res"></h3>
-                        </div>
-                    </div>    
+                    <button type="button-centered" class="btn btn-primary btn-lg" onclick="myFunction()">Try it</button>
+                    <button type="button-centered" class="btn btn-primary btn-lg" onclick="myFunction2()">Set font style</button>
+                    <button type="button-centered" class="btn btn-primary btn-lg" onclick="myFunction3()">Hide</button>
+                    <div class="absolute" id="myDIV">
+                        <p id="myP" onmouseover="myFunction4">Hola, me llamo César Buenfil. Hover Over Me.</p>
+                    </div>
+                    <img src="../Images/yo1.png" alt="Smiley face" id="watermark">
                 </div>
 
           </div>
         </div>
+        
 
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
               <div class="row">
                 <div class="col">
                   <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</div>
+                    <div class="card-header">¿Cuáles son las diferencias entre los posibles valores de la propiedad position?</div>
                     <div class="card-body">
-                        <p class="card-text">Porque si el usuario ingresa un input erróneo que no esté dentro de los inputs válidos, mandarlos al servidor sólo para que diga que no es un input válido es una pérdida de tiempo. Con esto haces que los inputs inválidos se detectan más rápido y así eficientas el sistema.</p>
+                        <div class="alert alert-primary" role="alert">
+                          Static:	Es el Default..
+                        </div>
+                        <div class="alert alert-secondary" role="alert">
+                          Absolute:	La posición del elemento se toma desde el objeto de arriba.
+                        </div>
+                        <div class="alert alert-success" role="alert">
+                          Fixed:	La posición del elemento se toma desde la ventana del usuario.
+                        </div>
+                        <div class="alert alert-danger" role="alert">
+                          Relative:	La posición del elemento se toma desde su posición normal.
+                        </div>
+                        <div class="alert alert-warning" role="alert">
+                          Sticky:	La posición del elemento se toma desde el scroll del usuario.
+                        </div>
+                        <div class="alert alert-info" role="alert">
+                          Initial:	Pone el elemento en el estado default.
+                        </div>
+                        <div class="alert alert-light" role="alert">
+                          Inherit:	Toma la info de el elemento padre.
+                        </div>
                     </div>
                   </div>
                 </div>
                 <div class="col">
                   <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</div>
+                    <div class="card-header">¿Cuáles son los valores estándar para la propiedad visibility?</div>
                     <div class="card-body">
-                        <p>Desabilitando JavaScript en el Navegador.</p>
+                        <div class="alert alert-primary" role="alert">
+                          Visible:	El Default, pone el elemento visible.
+                        </div>
+                        <div class="alert alert-secondary" role="alert">
+                          Hidden:	Pone el elemento invisible pero sigue tomando el espacio.
+                        </div>
+                        <div class="alert alert-success" role="alert">
+                          Collapse:	Para tablas, borra el espacio de un dato en la tabla y permite que algo más tome su lugar.
+                        </div>
+                        <div class="alert alert-info" role="alert">
+                          Initial:	Pone el elemento en el estado default.
+                        </div>
+                        <div class="alert alert-light" role="alert">
+                          Inherit:	Toma la info de el elemento padre.
+                        </div>                        
                     </div>
                   </div>
                 </div>
                 <div class="col">
                   <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</div>
+                    <div class="card-header">Qué es el zIndex y para qué sirve?</div>
                     <div class="card-body">
-                        <p>Porque aunque desabilites JS el input debe ir al navegador y validarlo, es sólo para que tarde menos tiempo si el input no es válido. Es una tontería desabilitarlo porque como usuario, el proceso de validar es más tardado.</p>
+                        <p>El zIndex funciona como si fuera 3 dimensiones y sirve para poner cosas encima de otras y poner prioridad, qué se ve encima de las otras.</p>
                     </div>
                   </div>
                 </div>
@@ -173,6 +197,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
     
     <!-- My JS -->  
-    <script type = "text/javascript" src = "codigo.js"></script>  
+    <script type = "text/javascript" src = "../JavaScript/lab6.js"></script>  
       
 </html>

@@ -75,33 +75,4 @@ function five(num) {
 function six(str1,str2,num,str3) {
     var person ={firstName: str1,lastName: str2, age: num, eyeColor:str3};
     document.getElementById("res").innerHTML = "Nombre= " + person.firstName + "<br>Apellido= " + person.lastName + "<br>Edad= " + person.age + "<br>Color de ojos= " + person.eyeColor;
-} 
-
-function check() {
-    if (document.getElementById("username").value === ""){
-        document.getElementById('message').innerHTML = "Ingresa un nombre de usuario";
-    }    
-    else if (document.getElementById("email").value === ""){
-        document.getElementById('message').innerHTML = "Ingresa un email";    
-    }
-    else if (document.getElementById("password").value === ""){
-        document.getElementById('message').innerHTML = "Ingresa una password";    
-    } 
-    else if (document.getElementById('password').value === document.getElementById('retype_password').value) {
-        document.getElementById('message').innerHTML = "Account created successfully";
-    }    
-    else {
-        document.getElementById('message').innerHTML = "Passwords do not match";
-    }
-}
-
-function check2() { 
-    var includesAt = /@./g;
-    var x = document.getElementById("email");
-    if (x.value.match(includesAt)){
-        document.getElementById('message').innerHTML = "Valid Email";    
-    }    
-    else {
-        document.getElementById('message').innerHTML = "Invalid Email";
-    }
 }

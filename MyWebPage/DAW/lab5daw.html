@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    
+    <link href='https://fonts.googleapis.com/css?family=Over the Rainbow' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+      
+    <!-- My CSS -->
+    <link rel="stylesheet" href="../CSS/ministyles.css">
+      
+    <title>A01207499</title>
+      
+    <style type="text/css">
+		 h3	{ font-size: 20pt; 
+			  color: pink}
+	</style> 
+
+  </head>
+
+  <!-- Body -->  
+  <body>
+    
+    <!-- Navbar --> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/index.html">César Buenfil</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html">Home<span class="sr-only">(current)</span></a>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              DAW
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="../DAW/lab1daw.html">Laboratorio 1: Introducción</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../DAW/lab3daw.html">Laboratorio 3: CSS</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../DAW/lab4daw.html">Laboratorio 4: JavaScript</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../DAW/lab5daw.html">Laboratorio 5: Programación orientada a eventos</a>    
+            </div>
+          </li>
+            
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              BD
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="../BD/lab1bd.html">Investigación 1: Ciclo de vida y de desarrollo de los sistemas de información</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../BD/lab2bd.html">Cuestionario 1: BD vs DBMS</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../DAW/tienda.html">Store<span class="sr-only">(current)</span></a>
+          </li>
+            
+        </ul>
+        <ul class="nav navbar-nav navbar-right">  
+          <li class="nav-item">
+            <a class="nav-link" href="../DAW/register.html">Register<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>    
+      </div>
+    </nav>
+    <!-- Navbar -->  
+      
+    <!-- Título -->
+    <header>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="row">
+                        <h1 class="display-4">Lab 5: Programación orientada a eventos</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Artículo -->  
+    <section class="container">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">Ejercicio Extra</h1>
+                <div class="alert alert-light" role="alert">
+                    <div class="row">
+                        <div class="col">
+                            <div class="container">
+                                <p class="titulo">Check if Email is valid</p>
+                                <div class="alert alert-light" role="alert">
+                                    <label for="Email">Email address</label>
+                                    <div class="input-group mb-3">
+                                        <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                                    </div> 
+                                    <button type="button-centered" class="btn btn-primary btn-lg" onclick='check2();'>Check</button>
+                                    <span id='message'></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h3 id="res"></h3>
+                        </div>
+                    </div>    
+                </div>
+
+          </div>
+        </div>
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</div>
+                    <div class="card-body">
+                        <p class="card-text">Porque si el usuario ingresa un input erróneo que no esté dentro de los inputs válidos, mandarlos al servidor sólo para que diga que no es un input válido es una pérdida de tiempo. Con esto haces que los inputs inválidos se detectan más rápido y así eficientas el sistema.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</div>
+                    <div class="card-body">
+                        <p>Desabilitando JavaScript en el Navegador.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</div>
+                    <div class="card-body">
+                        <p>Porque aunque desabilites JS el input debe ir al navegador y validarlo, es sólo para que tarde menos tiempo si el input no es válido. Es una tontería desabilitarlo porque como usuario, el proceso de validar es más tardado.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+          <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                <h1 class="display-4">Bibliografía:</h1>
+                <p class="lead">Mauricio Lazcano. "Validar formularios con JavaScript". http://michelletorres.mx/validar-formularios-con-javascript/. 07/06/2016.[25/01/2018]</p>
+                <p class="lead">Julian. "saltar validacion javascript". https://www.clubdelphi.com/foros/showthread.php?t=65438. 15/12/2009. [25/01/2018]</p>
+                <p class="lead">NA.(2018). JavaScript Date Reference. W3Schools. Obtenido en: https://www.w3schools.com/jsref/jsref_obj_date.asp</p>
+                <p class="lead">NA.(2018). JavaScript Regular Expressions. W3Schools. Obtenido en: https://www.w3schools.com/js/js_regexp.asp</p>
+                <p class="lead">NA.(2018). JavaScript Array Reference. W3Schools. Obtenido en: https://www.w3schools.com/jsref/jsref_obj_array.asp</p>  
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    
+  </body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    
+    <!-- My JS -->  
+    <script type = "text/javascript" src = "../JavaScript/registar.js"></script>  
+      
+</html>
