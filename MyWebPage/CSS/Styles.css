@@ -21,6 +21,13 @@ h5 {
     visibility: hidden;
 }
 
+.showme{ 
+display: none;
+}
+.showhim:hover .showme{
+display : block;
+}
+
 #watermark {
  position:fixed;
  bottom:5px;

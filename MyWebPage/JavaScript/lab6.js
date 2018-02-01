@@ -13,6 +13,9 @@ function myFunction4() {
 function myFunction5() {
     alert('Hello');
 }
+function myFunction6() {
+    setInterval(function(){ alert("Hello"); }, 3000);
+}
 function allowDrop(ev) {
     ev.preventDefault();
 }
