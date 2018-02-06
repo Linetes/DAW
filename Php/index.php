@@ -1,6 +1,7 @@
 <?php
-include("../Partials/_imports");
+include("../Partials/_imports.html");
 include("../Partials/_header.html");
+include("../index.html");
 $saludo = "Hola mundo!";
 echo "<h1>$saludo</h1>";
 ?>    
