@@ -21,7 +21,7 @@ h5 {
     visibility: hidden;
 }
 
-.showme{ 
+.showme{
 display: none;
 }
 .showhim:hover .showme{
@@ -53,7 +53,7 @@ display : block;
 
 h2.titulo {
     font-family: 'Limelight', cursive;
-    color: deeppink !important;
+    color: dimgray !important;
     text-align: center;
     font-size: 60px;
 }
@@ -81,7 +81,7 @@ div.absolute {
     position: absolute;
     top: 0;
     left: 0;
-    min-height: 100px !important; 
+    min-height: 100px !important;
 }
 #div1 {
     width: 350px;
