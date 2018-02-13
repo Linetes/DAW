@@ -1,4 +1,57 @@
 <?php
+$numbers = array(2,1,4,3,5,8,7,8);
+$numbers2 = array(33,12,45,98,1,4894,23,12,89,43);
+
+function avg($num){
+  $average = array_sum($num)/count($num);
+  return $average;
+}
+
+function median($num) {
+  sort($num);
+  if( sizeof($num) % 2 == 0){
+      return ($num[(sizeof($num)/2)-1]+$num[sizeof($num)/2]/2);
+  } else {
+      return $num[sizeof($num)/2];
+  }
+}
+function printit($num){
+    for ($i=0; $i<sizeof($num); $i++) {
+        echo $num[$i]." ";
+    }
+}
+function enlist($num){
+    echo "<div class='row'><div class='col-sm-4'><ul class='list-group'>";
+    foreach($num as $valor){
+        echo "<li class='list-group-item'>$valor</li>";
+    }
+    echo "</ul></div>";
+
+    sort($num);
+    echo "<div class='col-sm-4'><ul class='list-group'>";
+    foreach($num as $valor){
+        echo "<li class='list-group-item'>$valor</li>";
+    }
+    echo "</ul></div>";
+
+    rsort($num);
+    echo "<div class='col-sm-4'><ul class='list-group'>";
+    foreach($num as $valor){
+        echo "<li class='list-group-item'>$valor</li>";
+    }
+}
+
+function tabulate($n){
+    echo "<table class='table table-bordered'><thead class='thead-dark'><tr><th>n</th><th>n^2</th><th>n^3</th></tr></thead><tbody>";
+    $i = 0;
+    for($i = 1; $i<=$n; $i++){
+        echo "<tr><td>".$i."</td><td>".pow($i,2)."</td><td>".pow($i,3)."</td></tr>";
+    }
+    echo "</tbody></table>";
+}
+
+?>
+<?php
   include("Partials/_imports.html");
   include("Partials/_header.html");
 ?>
@@ -23,35 +76,23 @@
           <div class="container">
             <h1 class="display-4">Ejercicios</h1>
                 <div class="alert alert-light" role="alert">
-                  <?php
-
-                  function avg(){
-                    $numbers = array(1,2,3,4,5,6,7,8);
-                    $average = array_sum($numbers)/count($numbers);
-                    echo $average;
-                  }
-
-                  function calculate_median() {
-                    $numbers = array(16,23,39,44,59,62,79,86);
-                    $count = count($numbers); //total numbers in array
-                    $middleval = floor(($count-1)/2); // find the middle value, or the lowest middle value
-                    if($count % 2) { // odd number, middle is the median
-                      $median = $numbers[$middleval];
-                    } else { // even number, calculate avg of 2 medians
-                      $low = $numbers[$middleval];
-                      $high = $numbers[$middleval+1];
-                      $median = (($low+$high)/2);
-                    }
-                    echo $median;
-                  }
-
-                  echo "Average ";
-                  avg();
-                  echo "  Median ";
-                  calculate_median();
-
-
-                  ?>
+                  <div class="container-fluid">
+                      <h4>Arreglo<br /> <?php printit($numbers)?></h4>
+                      <div class="row">
+                          <div class="col-sm-6">
+                            Media: <?php echo avg($numbers)?>
+                            <br />
+                            Mediana: <?php echo median($numbers)?>
+                          </div>
+                      </div>
+                      <br />
+                      <h4>Arreglo 2<br /> <?php printit($numbers2)?></h4>
+                      <?php enlist($numbers2)?>
+                      <br />
+                  </div>
+                  <div class="container-fluid">
+                      <?php tabulate(5)?>
+                  </div>
                 </div>
 
           </div>
