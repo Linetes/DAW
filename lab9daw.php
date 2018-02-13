@@ -1,6 +1,8 @@
 <?php
 $numbers = array(2,1,4,3,5,8,7,8);
 $numbers2 = array(33,12,45,98,1,4894,23,12,89,43);
+$numero = 21;
+$numero2 = 45;
 
 function avg($num){
   $average = array_sum($num)/count($num);
@@ -50,6 +52,16 @@ function tabulate($n){
     echo "</tbody></table>";
 }
 
+function ftam($num) {
+$res = $num/3.28084;
+return $res;
+}
+
+function maft($num) {
+$res = $num*3.28084;
+return $res;
+}
+
 ?>
 <?php
   include("Partials/_imports.html");
@@ -87,16 +99,34 @@ function tabulate($n){
                       </div>
                       <br />
                       <h4>Arreglo 2<br /> <?php printit($numbers2)?></h4>
-                      <?php enlist($numbers2)?>
+                      <?php
+                      enlist($numbers2);
+                      ?>
                       <br />
                   </div>
                   <div class="container-fluid">
                       <?php tabulate(5)?>
                   </div>
+                  <div class="container-fluid">
+                      <h4>Meters to Feet<br />
+                        <?php
+                        echo $numero;
+                        echo " = ";
+                        echo maft($numero);
+                        ?>
+                      </h4>
+                      <h4>Feet to Meters<br />
+                        <?php
+                        echo $numero2;
+                        echo " = ";
+                        echo ftam($numero2);
+                        ?>
+                      </h4>
+                  </div>
                 </div>
-
-          </div>
+            </div>
         </div>
+      </div>
 
 
         <div class="jumbotron jumbotron-fluid">
