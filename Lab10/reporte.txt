@@ -1,28 +1,19 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0\c87059;}
-\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\deftab720
-\pard\pardeftab720\sl320\partightenfactor0
+Preguntas
 
-\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
-Preguntas\
-\
-	\'bfQue muestra la instrucci\'f3n sp_help materiales?\'a0\
-Muestra 5 tablas con informaci\'f3n de la tabla de materiales, como el nombre, las llaves, el tipo de campo que tiene cada columna y otras cosas pero no muestra nada porque las tablas est\'e1n vac\'edas.\
-\
-	\'bfQu\'e9 efecto tuvo esta acci\'f3n?\
-Cre\'f3 las 5 tablas en el mismo momento sin necesidad de seleccionar.\
-\
-	\'bfQu\'e9 utilidad tiene esta manera de ejecutar los comandos de SQL?\
-Se pueden ejecutar varios comandos al mismo tiempo.\
-\
-	\'bfQu\'e9 relaci\'f3n tienen con las tablas de la base de datos? (checa su contenido)\
-Los csv tiene datos que siguen el formato de las variables de las tablas.\
-\
-	\'bfQu\'e9 relaci\'f3n tiene el contenido de este archivo (materiales.sql) con el formato en que se encuentran los datos en el archivo materiales.csv?\
-El sql lee con el codepage y termina de leer cada field por cada coma y cada l\'ednea por \\n en el csv.\
-\
-	\'bfQu\'e9 sucedi\'f3?\
-Los datos de los csv se cargaron en la base de datos y con select se desplegaron.}
+	¿Que muestra la instrucción sp_help materiales? 
+Muestra 5 tablas con información de la tabla de materiales, como el nombre, las llaves, el tipo de campo que tiene cada columna y otras cosas pero no muestra nada porque las tablas están vacías.
+
+	¿Qué efecto tuvo esta acción?
+Creó las 5 tablas en el mismo momento sin necesidad de seleccionar.
+
+	¿Qué utilidad tiene esta manera de ejecutar los comandos de SQL?
+Se pueden ejecutar varios comandos al mismo tiempo.
+
+	¿Qué relación tienen con las tablas de la base de datos? (checa su contenido)
+Los csv tiene datos que siguen el formato de las variables de las tablas.
+
+	¿Qué relación tiene el contenido de este archivo (materiales.sql) con el formato en que se encuentran los datos en el archivo materiales.csv?
+El sql lee con el codepage y termina de leer cada field por cada coma y cada línea por \n en el csv.
+
+	¿Qué sucedió?
+Los datos de los csv se cargaron en la base de datos y con select se desplegaron.
