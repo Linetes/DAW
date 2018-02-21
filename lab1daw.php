@@ -1,6 +1,5 @@
 <?php
-include("Partials/_imports.html");
-include("Partials/_header.html");
-include("Html/lab1daw.html");
-include("Partials/_footer.html");
+include("partials/_header.html");
+include("html/lab1daw.html");
+include("partials/_footer.html");
 ?>

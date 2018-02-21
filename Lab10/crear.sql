@@ -1,3 +1,4 @@
+DROP TABLE Materiales, Proyectos, Proveedores, Entregan
 CREATE TABLE Materiales
 (
   Clave numeric(5),

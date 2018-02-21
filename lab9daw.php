@@ -64,8 +64,7 @@ return $res;
 
 ?>
 <?php
-  include("Partials/_imports.html");
-  include("Partials/_header.html");
+  include("partials/_header.html");
 ?>
 
   <!-- Body -->
@@ -182,5 +181,5 @@ return $res;
     </section>
   </body>
 <?php
-  include("Partials/_footer.html");
+  include("partials/_footer.html");
 ?>

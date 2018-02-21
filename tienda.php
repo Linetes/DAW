@@ -1,6 +1,5 @@
 <?php
-include("Partials/_imports.html");
-include("Partials/_header.html");
-include("Html/tienda.html");
-include("Partials/_footer.html");
+include("partials/_header.html");
+include("html/tienda.html");
+include("partials/_footer.html");
 ?>
