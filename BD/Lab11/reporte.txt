@@ -1,19 +1,57 @@
 Preguntas
 
-	¿Que muestra la instrucción sp_help materiales? 
-Muestra 5 tablas con información de la tabla de materiales, como el nombre, las llaves, el tipo de campo que tiene cada columna y otras cosas pero no muestra nada porque las tablas están vacías.
+	Revisa el contenido de la tabla materiales y determina si existe alguna 		inconsistencia en el contenido de la tabla. ¿Cuál es? ¿A qué se debe? 
+Sí, hay dos registros con la misma clave, se debe a que no hay llave primaria y deja registrar datos con la misma clave.
 
-	¿Qué efecto tuvo esta acción?
-Creó las 5 tablas en el mismo momento sin necesidad de seleccionar.
+	¿Qué ocurrió? 
+No me deja porque ya hay otro registro con la misma clave.
 
-	¿Qué utilidad tiene esta manera de ejecutar los comandos de SQL?
-Se pueden ejecutar varios comandos al mismo tiempo.
+	¿Qué información muestra esta consulta? 
+Toda la información de la tabla, en especial muestra una tabla especificando el constraint y/o llave primaria.  
 
-	¿Qué relación tienen con las tablas de la base de datos? (checa su contenido)
-Los csv tiene datos que siguen el formato de las variables de las tablas.
+	¿Qué sentencias utilizaste para definir las llaves primarias? 
+ALTER TABLE Materiales add constraint llaveMateriales PRIMARY KEY (Clave)
+ALTER TABLE Proveedores add constraint llaveProveedores PRIMARY KEY (RFC)
+ALTER TABLE Proyectos add constraint llaveProyectos PRIMARY KEY (Numero)
 
-	¿Qué relación tiene el contenido de este archivo (materiales.sql) con el formato en que se encuentran los datos en el archivo materiales.csv?
-El sql lee con el codepage y termina de leer cada field por cada coma y cada línea por \n en el csv.
+	¿Qué sentencias utilizaste para definir este constrait? 
+ALTER TABLE Entregan add constraint llaveEntregan PRIMARY KEY (Clave, RFC, Numero, Fecha)
+	
+	¿Qué particularidad observas en los valores para clave, rfc y numero? 
+Que aunque se repitan en la tabla, con fecha no se repiten agrupados. Además acepta el registro 0.
 
-	¿Qué sucedió?
-Los datos de los csv se cargaron en la base de datos y con select se desplegaron.
+	¿Cómo responde el sistema a la inserción de este registro?
+Lo acepta sin problemas. 
+
+	¿Qué significa el mensaje que emite el sistema?
+The ALTER TABLE statement conflicted with the FOREIGN KEY constraint
+
+No me dejaba poner la llave foránea porque había un registro más en Entregan.
+	
+	¿Qué significado tiene la sentencia anterior? 
+ Los datos no eran consistentes y no me dejaba asignar la llave foránea.
+
+	¿Qué significan las columnas de esas consultas?
+Todos los datos de las llaves, ya sean primarias o foráneas.
+
+	¿Qué uso se le está dando a GETDATE()?
+Le asigna la fecha de hoy.
+
+	¿Tiene sentido el valor del campo de cantidad? 
+No porque si la cantidad es 0, no vale la pena guardarlo.
+
+	¿Cómo responde el sistema? 
+The INSERT statement conflicted with the CHECK constraint "Cantidad". The conflict occurred in database "a1207499", table "a1207499.Entregan", column 'Cantidad'.
+
+No deja por la declaración anterior.
+
+	¿Qué significa el mensaje? 
+Que hay un conflicto en la columna de cantidad porque es un cero el dato.
+
+	Integridad referencial
+El concepto es usado mucho en Bases de Datos y se refiere a que la relación que hay entre dos tablas sea siempre consistente. Que si hay datos que hacen referencia otros como las claves foráneas, deben ser correctos, en otras palabras, tienen que estar los mismos datos en las columnas relacionadas.
+
+
+Bibliografía
+
+NA .(2000). Conceptos básicos de integridad referencial. Obtenido en: http://www.aulaclic.es/sql/b_8_1_1.htm

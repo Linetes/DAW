@@ -28,8 +28,8 @@ IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Entregan'
 CREATE TABLE Entregan
 (
   Clave numeric(5) not null,
-  RFC varchar(50) not null,
+  RFC char(13) not null,
   Numero numeric(5) not null,
-  Fecha datetime,
+  Fecha datetime not null,
   Cantidad numeric(8,2),
 )
