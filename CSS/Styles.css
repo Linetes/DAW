@@ -1,19 +1,16 @@
 p {
-    font-family: 'Roboto', serif;
+    font-family: 'Quicksand';
     color: gray;
     font-size: 16px;
 }
-p:hover {
-    color: skyblue;
-}
 
 header {
-    font-family: 'Roboto';
+    font-family: 'Quicksand';
     color: dimgray;
 }
 
 h1 {
-    font-family: 'Roboto';
+    font-family: 'Quicksand';
     color: dimgray;
 }
 
@@ -38,31 +35,31 @@ display : block;
 }
 
 #fresa {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Quicksand', cursive;
     color: skyblue;
     text-decoration: inherit;
     font-size: 24px;
 }
 
 .titulo {
-    font-family: 'Limelight', cursive;
+    font-family: 'Quicksand', cursive;
     color: dimgray;
     text-align: center;
     font-size: 60px;
 }
 
 h2.titulo {
-    font-family: 'Limelight', cursive;
+    font-family: 'Quicksand', cursive;
     color: dimgray !important;
     text-align: center;
     font-size: 60px;
 }
 
 h2 {
-    font-family: 'Limelight', cursive;
-    color: deepskyblue;
+    font-family: 'Quicksand', cursive;
+    color: dimgray;
     text-align: center;
-    font-size: 60px;
+    font-size: 30px;
 }
 
 div.absolute {
