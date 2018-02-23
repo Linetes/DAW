@@ -71,6 +71,16 @@
                     </div>
                   </div>
                 </div>
+                <div class="col">
+                  <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Explora las funciones de php, y describe 2 que no hayas visto en otro lenguaje y que llamen tu atención.</div>
+                    <div class="card-body">
+                        <p>__wakeup() : Reestablecer conexión con las bases de datos</p>
+                        <br />
+                        <p>__invoke() : Cuando un script quiere llamar un objeto como una función.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
           <div class="jumbotron jumbotron-fluid">
