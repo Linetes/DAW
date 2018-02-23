@@ -1,0 +1,19 @@
+Preguntas
+
+	¿Que muestra la instrucción sp_help materiales? 
+Muestra 5 tablas con información de la tabla de materiales, como el nombre, las llaves, el tipo de campo que tiene cada columna y otras cosas pero no muestra nada porque las tablas están vacías.
+
+	¿Qué efecto tuvo esta acción?
+Creó las 5 tablas en el mismo momento sin necesidad de seleccionar.
+
+	¿Qué utilidad tiene esta manera de ejecutar los comandos de SQL?
+Se pueden ejecutar varios comandos al mismo tiempo.
+
+	¿Qué relación tienen con las tablas de la base de datos? (checa su contenido)
+Los csv tiene datos que siguen el formato de las variables de las tablas.
+
+	¿Qué relación tiene el contenido de este archivo (materiales.sql) con el formato en que se encuentran los datos en el archivo materiales.csv?
+El sql lee con el codepage y termina de leer cada field por cada coma y cada línea por \n en el csv.
+
+	¿Qué sucedió?
+Los datos de los csv se cargaron en la base de datos y con select se desplegaron.
