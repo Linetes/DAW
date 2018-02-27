@@ -1,0 +1,32 @@
+<HTML lang="en">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <form action="create.php" method="POST" enctype="multipart/form-data">
+      <label for="producto">Producto</label>
+      <div class="input-group mb-3">
+        <input placeholder="Inserte el nombre de la imagen" class="form-control" name="producto" id="producto" type="text" class="validate" required>
+      </div>
+
+      <div class="input-group mb-3">
+        <?php if (isset($_SESSION["error_archivo"]) != ""): ?>
+        <span class="red-text text-darken-2"><?=$_SESSION["error_archivo"] ?></span>
+        <?php endif; ?>
+      </div>
+
+      <div class="file-field input-field">
+        <div class="btn">
+          <span >Imagen</span>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile" name="imagen">Choose file</label>
+          </div>
+        </div>
+      </div>
+      <div class="input-field col s6">
+        <input type="submit" class="btn btn-primary" value="Registrar">
+      </div>
+    </form>
+  </div>
+</div>
+
+</HTML>

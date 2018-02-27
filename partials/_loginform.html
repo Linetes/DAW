@@ -1,0 +1,39 @@
+
+<HTML lang="en">
+  <!-- Body -->
+  <body>
+  <!-- Artículo -->
+  <section class="container">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <p class="titulo">Log in</p>
+        <div class="container">
+          <div class="alert alert-light" role="alert">
+            <form action="index2.php" method="POST">
+              <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <div class="input-field col s12">
+                    <?php if (isset($_SESSION["error"]) != ""): ?>
+                    <div class="card-panel">
+                    <span class="red-text text-darken-2"><?=$_SESSION["error"] ?></span>
+                    </div>
+                    <?php endif; ?>
+                </div>
+              <label for="usuario">Username</label>
+              <div class="input-group mb-3">
+                <input placeholder="lalo" class="form-control" name="usuario" id="usuario" type="text" class="validate" required>
+              </div>
+              <label for="password">Password</label>
+              <div class="input-group mb-3">
+                <input placeholder="hockey" id="password" class="form-control" name="password" type="password" class="validate" required>
+              </div>
+              <button type="button-centered" class="btn btn-primary btn-lg" onclick='check();'>Log in </button>
+              <span id='message'></span>
+            </form>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </body>
+</HTML>

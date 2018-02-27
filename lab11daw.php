@@ -1,5 +1,6 @@
 <?php
-  include("partials/_header.html");
+session_start();
+include("partials/_header.html");
 ?>
 
   <!-- Body -->

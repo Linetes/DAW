@@ -1,4 +1,5 @@
 <?php
+session_start();
 $numbers = array(2,1,4,3,5,8,7,8);
 $numbers2 = array(33,12,45,98,1,4894,23,12,89,43);
 $numero = 21;
