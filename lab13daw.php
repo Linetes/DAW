@@ -27,7 +27,7 @@ include("partials/_header.html");
                   <div class="card bg-light mb-3" style="max-width: 18rem;">
                     <div class="card-header">¿Por qué es importante hacer un session_unset() y luego un session_destroy()?</div>
                     <div class="card-body">
-                        <p></p>
+                        <p>Porque el unset libera todas las variables de la sesión y destroy destruye todos los datos de la sesión.</p>
                     </div>
                   </div>
                 </div>
@@ -35,7 +35,7 @@ include("partials/_header.html");
                   <div class="card bg-light mb-3" style="max-width: 18rem;">
                     <div class="card-header">¿Cuál es la diferencia entre una variable de sesión y una cookie?</div>
                     <div class="card-body">
-                      <p></p>
+                      <p>Las variables de la sesión son guardadas en el servidor y las cookies son guardadas en el cliente.</p>
                     </div>
                   </div>
                 </div>
@@ -43,7 +43,7 @@ include("partials/_header.html");
                   <div class="card bg-light mb-3" style="max-width: 18rem;">
                     <div class="card-header">¿Qué técnicas se utilizan en sitios como facebook para que el usuario no sobreescriba sus fotos en el sistema de archivos cuando sube una foto con el mismo nombre?</div>
                     <div class="card-body">
-                        <p></p>
+                        <p>Le agrega al nombre del archivo el Timestamp.</p>
                     </div>
                   </div>
                 </div>
@@ -51,7 +51,7 @@ include("partials/_header.html");
                   <div class="card bg-light mb-3" style="max-width: 18rem;">
                     <div class="card-header">¿Qué es CSRF y cómo puede prevenirse?</div>
                     <div class="card-body">
-                        <p></p>
+                        <p>Evitando tener varias sesiones abiertas, borrar las cookies cuando ya no se usan.</p>
                     </div>
                   </div>
                 </div>
@@ -60,9 +60,9 @@ include("partials/_header.html");
           <div class="jumbotron jumbotron-fluid">
               <div class="container">
                 <h1 class="display-4">Bibliografía:</h1>
-                <p class="lead">Lujan,Sergio .(2012). Predefined Variables. Obtenido en: http://desarrolloweb.dlsi.ua.es/cursos/2012/web-programming-with-php/predefined-variables</p>
-                <p class="lead">Mollericona, Edson.(2014). MVP. Obtenido en: http://www.edsonmm.com/modelo-vista-controlador-php/</p>
-                <p class="lead">Morris, John.(2015). How To Prevent XSS Attacks by Escaping Output in PHP. Obtenido en: https://medium.com/@jpmorris/how-to-prevent-xss-attacks-by-escaping-output-in-php-942204bf184</p>
+                <p class="lead">Gumbo .(2010). What is the difference between session_unset() and session_destroy() in PHP?. Stack Overflow. Obtenido en: https://stackoverflow.com/questions/4303311/what-is-the-difference-between-session-unset-and-session-destroy-in-php</p>
+                <p class="lead">Daniel Vassallo. Jacob. (2016). When should I use session variables instead of cookies? Stack Overflow. Obtenido en: https://stackoverflow.com/questions/2240556/when-should-i-use-session-variables-instead-of-cookies</p>
+                <p class="lead">NA.(2018). CSRF Attacks, XSRF or Sea-Surf. Obtenido en: https://www.acunetix.com/websitesecurity/csrf-attacks/</p>
               </div>
           </div>
         </div>
