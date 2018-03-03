@@ -5,9 +5,8 @@ function connect() {
         $mysql = mysqli_connect("localhost","Linetes","cesarb13","lab14", 8889);
         //root si estan en windows
     } else  if ($ENV == "prod"){
-        $mysql = mysqli_connect("localhost:8889","root","","lab14");
+        $mysql = mysqli_connect("localhost","Linetes","cesarb13","lab14", 8889);
     }
-    var_dump($mysql);
     $mysql->set_charset("utf8");
     return $mysql;
 }
@@ -111,7 +110,7 @@ function getProductos() {
 }
 
 
-connect();
+//var_dump(login('lalo', 'hockey'));
 //var_dump(login('joaquin', 'basket'));
 //var_dump(login('cesar', 'basket'));
 ?>
