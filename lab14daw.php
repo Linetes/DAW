@@ -43,7 +43,19 @@ include("partials/_header.html");
                   <div class="card bg-light mb-3" style="max-width: 18rem;">
                     <div class="card-header">¿Qué técnicas puedes utilizar para evitar ataques de SQL Injection?</div>
                     <div class="card-body">
-                        <p>Le agrega al nombre del archivo el Timestamp.</p>
+                        <p>
+                            Con SQLi, se usa una función que agarre la inyección.
+                            <br>
+                            $stmt = $dbConnection->prepare('SELECT * FROM employees WHERE name = ?');
+                            $stmt->bind_param('s', $name); // 's' specifies the variable type => 'string'
+
+                            $stmt->execute();
+
+                            $result = $stmt->get_result();
+                            while ($row = $result->fetch_assoc()) {
+                            // do something with $row
+                            }
+                        </p>
                     </div>
                   </div>
                 </div>

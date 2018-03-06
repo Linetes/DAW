@@ -1,4 +1,15 @@
 <?php
+
+$stmt = $dbConnection->prepare('SELECT * FROM employees WHERE name = ?');
+$stmt->bind_param('s', $name); // 's' specifies the variable type => 'string'
+
+$stmt->execute();
+
+$result = $stmt->get_result();
+while ($row = $result->fetch_assoc()) {
+    // do something with $row
+}
+
 function connect() {
     $ENV = "dev";
     if ($ENV == "dev") {
@@ -38,34 +49,73 @@ function login($user, $passwd) {
     return false;
 }
 
-function getProductosRaw() {
+function crearProducto($nombre, $imagen) {
+    $db = connect();
+    if ($db != NULL) {
+
+        // insert command specification
+        $query='INSERT INTO productos (nombre,imagen) VALUES (?,?) ';
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("ss", $nombre, $imagen)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+
+
+        mysqli_free_result($results);
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
+function getTable($tabla) {
     $db = connect();
     if ($db != NULL) {
 
         //Specification of the SQL query
-        $query='SELECT * FROM productos';
+        $query='SELECT * FROM '.$tabla;
         $query;
         // Query execution; returns identifier of the result group
         $results = $db->query($query);
         // cycle to explode every line of the results
 
+        $html = '<table class="striped">';
+        $html .= '<thead>';
+        $html .= '<tr>';
+        $columnas = $results->fetch_fields();
+        for($i=0; $i<count($columnas); $i++) {
+            $html .= '<th>'.$columnas[$i]->name.'</th>';
+        }
+        $html .= '</tr>';
+        $html .= '</thead>';
+
+        $html .= '<tbody>';
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
             // Options: MYSQLI_NUM to use only numeric indexes
             // MYSQLI_ASSOC to use only name (string) indexes
             // MYSQLI_BOTH, to use both
+            $html .= '<tr>';
             for($i=0; $i<count($fila); $i++) {
                 // use of numeric index
-                echo $fila[$i].' ';
+                $html .= '<td>'.$fila[$i].'</td>';
             }
-            echo '<br>';
+            $html .= '</tr>';
         }
-
+        $html .= '</tbody></table>';
         // it releases the associated results
         mysqli_free_result($results);
         disconnect($db);
-        return true;
+        return $html;
     }
-    return true;
+    return false;
 }
 
 function getProductos() {
@@ -79,6 +129,7 @@ function getProductos() {
         $results = $db->query($query);
         // cycle to explode every line of the results
         $html = '';
+
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
             // Options: MYSQLI_NUM to use only numeric indexes
             // MYSQLI_ASSOC to use only name (string) indexes
@@ -94,7 +145,7 @@ function getProductos() {
                                       <p>Publicado el: '.$fila["created_at"].'.</p>
                                     </div>
                                     <div class="card-action">
-                                      <a href="#">Editar</a>
+                                      <a href="editar.php?id='.$fila["id"].'">Editar</a>
                                     </div>
                                   </div>
                                 </div>
@@ -109,7 +160,9 @@ function getProductos() {
     return true;
 }
 
-
+//include "_header.html";
+//echo getTable("usuarios");
+//echo getTable("productos");
 //var_dump(login('lalo', 'hockey'));
 //var_dump(login('joaquin', 'basket'));
 //var_dump(login('cesar', 'basket'));

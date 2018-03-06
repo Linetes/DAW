@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require_once("modelo.php");
 if(isset($_SESSION["usuario"]) ) {
     if(isset($_POST["producto"]) != NULL ) {
         unset($_SESSION["error_archivo"]);
@@ -52,8 +52,8 @@ if(isset($_SESSION["usuario"]) ) {
             $_SESSION["error_archivo"] = "Si se esta procesando el archivo";
             header("location:add.php");
         }
-        $_SESSION["archivo"] = $target_file;
-        $_SESSION["producto"] = $_POST["producto"];
+
+        crearProducto($_POST["producto"], basename($_FILES["imagen"]["name"]));
         header("location:login.php");
     } else {
         $_SESSION["error_archivo"] = "No se esta procesando el archivo";
@@ -62,4 +62,4 @@ if(isset($_SESSION["usuario"]) ) {
 } else {
     header("location:index.php");
 }
-?>
+?>s
