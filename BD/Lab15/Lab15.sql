@@ -88,35 +88,39 @@ SELECT TOP 2 * FROM Proyectos
 
 SELECT * FROM Top_2_Proyectos
 
-CREATE VIEW Razon_Social_La("RFC","Cantidad","Fecha","Numero") as
-SELECT RFC,Cantidad, Fecha,Numero
-FROM [Entregan]
-WHERE [Numero] Between 5000 and 5010 AND
-Exists ( SELECT [RFC]
-FROM [Proveedores]
-WHERE RazonSocial LIKE 'La%' and [Entregan].[RFC] = [Proveedores].[RFC] )
+CREATE VIEW Prueba_1("clave","descripcion","costo") as
+select Clave, Descripcion, Costo
+from materiales
+SELECT * FROM Prueba_1
 
-SELECT * FROM Razon_Social_La
+CREATE VIEW Prueba_2("Descripcion") as
+SELECT DISTINCT Descripcion
+FROM Materiales, Entregan
+WHERE Fecha BETWEEN '01-JAN-2000' AND '31/12/2000'
 
-CREATE VIEW Clave_NOT_1000("Clave","RFC","Numero","Fecha","Cantidad") as
-(select * from entregan where NOT clave=1000)
+SELECT * FROM Prueba_2
 
-SELECT * FROM Clave_NOT_1000
+CREATE VIEW Prueba_3("Clave","RFC","Numero","Fecha","Cantidad") as
+select * from entregan where NOT clave=1000
 
-CREATE VIEW Clave_1450("Clave","RFC","Numero","Fecha","Cantidad") as
-select * from entregan where clave=1450
-
-SELECT * FROM Clave_1450
+SELECT * FROM Prueba_3
 
 SET DATEFORMAT DMY;
 
-CREATE VIEW Descripcion_Materiales_2000("Descripcion") as
+CREATE VIEW Prueba_4("Descripcion") as
 select DISTINCT descripcion
 from materiales, entregan
 where materiales.clave=entregan.clave AND
 Fecha BETWEEN '01/01/00' AND '31/12/00';
 
-SELECT * FROM Descripcion_Materiales_2000
+SELECT * FROM Prueba_4
+
+CREATE VIEW Prueba_5("Clave","RFC","Numero","Fecha","Cantidad") as
+SELECT Clave,RFC,Numero,Fecha,Cantidad
+FROM Entregan
+WHERE Numero Between 5000 and 5010;
+
+SELECT * FROM Prueba_5
 
 select m.clave, descripcion
 from materiales m, proyectos p, entregan e
