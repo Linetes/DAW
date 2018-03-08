@@ -54,12 +54,12 @@ if(isset($_SESSION["usuario"]) ) {
         }
 
         crearProducto($_POST["producto"], basename($_FILES["imagen"]["name"]));
-        header("location:login.php");
+        header("location:index2.php");
     } else {
         $_SESSION["error_archivo"] = "No se esta procesando el archivo";
         header("location:add.php");
     }
 } else {
-    header("location:index.php");
+    header("location:login.php");
 }
-?>s
+?>

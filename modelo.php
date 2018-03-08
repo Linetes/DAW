@@ -1,26 +1,16 @@
 <?php
-
-$stmt = $dbConnection->prepare('SELECT * FROM employees WHERE name = ?');
-$stmt->bind_param('s', $name); // 's' specifies the variable type => 'string'
-
-$stmt->execute();
-
-$result = $stmt->get_result();
-while ($row = $result->fetch_assoc()) {
-    // do something with $row
-}
-
 function connect() {
     $ENV = "dev";
     if ($ENV == "dev") {
-        $mysql = mysqli_connect("localhost","Linetes","cesarb13","lab14", 8889);
+        $mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","lab14", 8889);
         //root si estan en windows
     } else  if ($ENV == "prod"){
-        $mysql = mysqli_connect("localhost","Linetes","cesarb13","lab14", 8889);
+        $mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","lab14", 8889);
     }
     $mysql->set_charset("utf8");
     return $mysql;
 }
+
 
 function disconnect($mysql) {
     mysqli_close($mysql);

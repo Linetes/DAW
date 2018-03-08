@@ -74,7 +74,7 @@ SELECT TOP 2 * FROM Proyectos
 
 SELECT TOP 1 Numero FROM Proyectos
 
-ALTER TABLE materiales ADD PorcentajeImpuesto NUMERIC(6,2);
+ALTER TABLE materiales ADD PorcentajeImpuesto NUMERIC(2,6);
 UPDATE materiales SET PorcentajeImpuesto = 2*clave/1000;
 SELECT * FROM Materiales
 
