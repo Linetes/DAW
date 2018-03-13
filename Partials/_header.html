@@ -37,20 +37,28 @@
               DAW
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="lab1daw.php">Laboratorio 1: Introducción</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="lab3daw.php">Laboratorio 3: CSS</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="lab4daw.php">Laboratorio 4: JavaScript</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="lab5daw.php">Laboratorio 5: Programación orientada a eventos</a>   <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="lab6daw.php">Laboratorio 6: Documentos dinámicos con JavaScript</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="lab7daw.php">Lab 7: Front-end Frameworks</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="lab9daw.php">Lab 9: Introducción a php</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="lab11daw.php">Lab 11: Manejo de formas con php y modelo de capas</a>
+                <a class="dropdown-item" href="lab1daw.php">Laboratorio 1: Introducción</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab3daw.php">Laboratorio 3: CSS</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab4daw.php">Laboratorio 4: JavaScript</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab5daw.php">Laboratorio 5: Programación orientada a eventos</a>   <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab6daw.php">Laboratorio 6: Documentos dinámicos con JavaScript</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab7daw.php">Lab 7: Front-end Frameworks</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab9daw.php">Lab 9: Introducción a php</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab11daw.php">Lab 11: Manejo de formas con php y modelo de capas</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab13daw.php">Lab 13: Manejo de sesiones con php</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab14daw.php">Lab 14: php y consultas dinámicas a la base de datos</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab16daw.php">Lab 16: php y manipulación de registros de la base de datos</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab17daw.php">Lab 17: AJAX</a>
             </div>
           </li>
 
@@ -59,9 +67,11 @@
               BD
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="lab1bd.php">Investigación 1: Ciclo de vida y de desarrollo de los sistemas de información</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="lab2bd.php">Cuestionario 1: BD vs DBMS</a>
+                <a class="dropdown-item" href="lab1bd.php">Investigación 1: Ciclo de vida y de desarrollo de los sistemas de información</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab2bd.php">Cuestionario 1: BD vs DBMS</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab3bd.php">Investigación 2: Evaluando los diferentes DBMS Relacionales con alcance empresarial con mayor penetración en el mercado</a>
             </div>
           </li>
           <li class="nav-item">
@@ -71,10 +81,17 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="nav-item">
-            <a class="nav-link" href="register.php">Register<span class="sr-only">(current)</span></a>
+            <?php if(!isset($_SESSION["usuario"])): ?>
+              <li><a class="nav-link" href="register.php">Register<span class="sr-only">(current)</span></a></li>
+              <li><a class="nav-link" href="login.php">Log in<span class="sr-only">(current)</span></a></li>
+            <?php endif; ?>
+          </li>
+          <li class="nav-item">
+            <?php if(isset($_SESSION["usuario"])): ?>
+          <li><a class="nav-link" href="logout.php">Log Out<span class="sr-only">(current)</span></a></li>
+          <?php endif; ?>
           </li>
         </ul>
       </div>
     </nav>
-
 </HTML>
