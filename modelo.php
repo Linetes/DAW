@@ -66,6 +66,60 @@ function crearProducto($nombre, $imagen) {
     return false;
 }
 
+function crearUsuario($nombre, $passwd) {
+    $db = connect();
+    if ($db != NULL) {
+
+        // insert command specification
+        $query='INSERT INTO productos (nombre,passwd) VALUES (?,?) ';
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("ss", $nombre, $passwd)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+
+
+        mysqli_free_result($results);
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
+function borrarProducto($nombre, $imagen) {
+    $db = connect();
+    if ($db != NULL) {
+
+        // insert command specification
+        $query='DELETE FROM productos (nombre,imagen) WHERE imagen=".$_GET[\'remove_id\'] ';
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("ss", $nombre, $imagen)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+
+
+        mysqli_free_result($results);
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
 function getTable($tabla) {
     $db = connect();
     if ($db != NULL) {
