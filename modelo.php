@@ -66,59 +66,7 @@ function crearProducto($nombre, $imagen) {
     return false;
 }
 
-function crearUsuario($nombre, $passwd) {
-    $db = connect();
-    if ($db != NULL) {
 
-        // insert command specification
-        $query='INSERT INTO productos (nombre,passwd) VALUES (?,?) ';
-        // Preparing the statement
-        if (!($statement = $db->prepare($query))) {
-            die("Preparation failed: (" . $db->errno . ") " . $db->error);
-        }
-        // Binding statement params
-        if (!$statement->bind_param("ss", $nombre, $passwd)) {
-            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-        }
-        // Executing the statement
-        if (!$statement->execute()) {
-            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-        }
-
-
-        mysqli_free_result($results);
-        disconnect($db);
-        return true;
-    }
-    return false;
-}
-
-function borrarProducto($nombre, $imagen) {
-    $db = connect();
-    if ($db != NULL) {
-
-        // insert command specification
-        $query='DELETE FROM productos (nombre,imagen) WHERE imagen=".$_GET[\'remove_id\'] ';
-        // Preparing the statement
-        if (!($statement = $db->prepare($query))) {
-            die("Preparation failed: (" . $db->errno . ") " . $db->error);
-        }
-        // Binding statement params
-        if (!$statement->bind_param("ss", $nombre, $imagen)) {
-            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-        }
-        // Executing the statement
-        if (!$statement->execute()) {
-            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-        }
-
-
-        mysqli_free_result($results);
-        disconnect($db);
-        return true;
-    }
-    return false;
-}
 
 function getTable($tabla) {
     $db = connect();
@@ -202,6 +150,51 @@ function getProductos() {
         return true;
     }
     return true;
+}
+
+function getFruits() {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT * FROM Fruit";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        return $result;
+    }
+    return false;
+}
+
+function getFruitsByName($fruit_name) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT * FROM Fruit WHERE name LIKE '%".$fruit_name."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        return $result;
+    }
+    return false;
+}
+
+
+function getCheapestFruits($cheap_price) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT * FROM Fruit WHERE price <= '".$cheap_price."'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        return $result;
+    }
+    return false;
+}
+
+function insertFruit($name, $units, $quantity, $price, $country){
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "INSERT INTO Fruit (name, units, quantity, price, country) Values (\"" . $name . "\",\"" . $units . "\",\"" . $quantity . "\",\"" . $price . "\",\"" . $country . "\");";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        return $result;
+    }
+    return false;
 }
 
 //include "_header.html";

@@ -10,7 +10,6 @@
         <div class="container">
           <div class="alert alert-light" role="alert">
             <form action="index2.php" method="POST">
-              <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <div class="input-field col s12">
                     <?php if (isset($_SESSION["error"]) != ""): ?>
                     <div class="card-panel">
@@ -27,8 +26,6 @@
                 <input placeholder="hockey/buenfil" id="password" class="form-control" name="password" type="password" class="validate" required>
               </div>
               <button type="button-centered" class="btn btn-primary btn-lg" onclick='check();'>Log in </button>
-              <span id='message'></span>
-            </form>
             </form>
           </div>
         </div>
