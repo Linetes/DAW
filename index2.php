@@ -7,7 +7,7 @@ if(isset($_SESSION["usuario"]) ) {
     $user = $_SESSION["usuario"];
     include("partials/_tienda.html");
     include("partials/_footer.html");
-}else if (login($_POST["usuario"], $_POST["password"]) ) {
+}else if (login(htmlspecialchars($_POST["usuario"]), htmlspecialchars($_POST["password"])) ) {
     unset($_SESSION["error"]);
     $_SESSION["usuario"] = $_POST["usuario"];
     $user = $_SESSION["usuario"];
