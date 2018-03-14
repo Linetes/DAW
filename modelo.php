@@ -127,21 +127,23 @@ function getProductos() {
             // MYSQLI_ASSOC to use only name (string) indexes
             // MYSQLI_BOTH, to use both
             $html .= '<div class="row">
-                                <div class="col s12 m7">
-                                  <div class="card">
-                                    <div class="card-image">
-                                      <img src="uploads/'.$fila["imagen"].'">
-                                      <span class="card-title">'.$fila["nombre"].'</span>
-                                    </div>
-                                    <div class="card-content">
-                                      <p>Publicado el: '.$fila["created_at"].'.</p>
-                                    </div>
-                                    <div class="card-action">
-                                      <a href="editar.php?id='.$fila["id"].'">Editar</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>';
+                <div class="col s12 m7">
+                  <div class="card" style="width:18rem;">
+                    <div class="card-image-top">
+                      <img src="uploads/'.$fila["imagen"].'" style="width:18rem;">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-title">'.$fila["nombre"].'</span>
+                        <div class="card-content">
+                          <p>Publicado el: '.$fila["created_at"].'.</p>
+                        </div>
+                        <div class="card-action">
+                          <a href="editar.php?id='.$fila["id"].'">Editar</a>
+                        </div>
+                    </div>            
+                  </div>
+                </div>
+              </div>';
         }
         echo $html;
         // it releases the associated results

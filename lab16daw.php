@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once("modelo.php");
 include("partials/_header.html");
 ?>
 
@@ -17,6 +18,119 @@ include("partials/_header.html");
             </div>
         </div>
     </header>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Ejercicios con Fruit</h1>
+            <div class="alert alert-light" role="alert">
+                <h1>Normal</h1>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Units</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Country</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+
+                    $result = getFruits();
+
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo "<tr class=''>";
+                            echo "<td>" . $row["name"] . "</td>";
+                            echo "<td>" . $row["units"] . "</td>";
+                            echo "<td>" . $row["quantity"] . "</td>";
+                            echo "<td>" . $row["price"] . "</td>";
+                            echo "<td>" . $row["country"] . "</td>";
+                            echo "</tr>";
+                        }
+                    }
+                    ?>
+                    </tbody>
+                </table>
+                <h1>Por Nombre</h1>
+                <form action="lab14daw.php" method="POST">
+                    <label for="usuario">Fruta que quieres</label>
+                    <div class="input-group mb-3">
+                        <input placeholder="mango" class="form-control" name="fruit_name" type="text" class="validate" required>
+                    </div>
+                    <button type="button-centered" class="btn btn-primary btn-lg">Submit</button>
+                </form>
+                <br>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Units</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Country</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $result = getFruitsByName(htmlspecialchars($_POST["fruit_name"]));
+
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo "<tr class=''>";
+                            echo "<td>" . $row["name"] . "</td>";
+                            echo "<td>" . $row["units"] . "</td>";
+                            echo "<td>" . $row["quantity"] . "</td>";
+                            echo "<td>" . $row["price"] . "</td>";
+                            echo "<td>" . $row["country"] . "</td>";
+                            echo "</tr>";
+                        }
+                    }
+                    ?>
+                    </tbody>
+                </table>
+
+                <h1>Más Barato</h1>
+                <form action="lab14daw.php" method="POST">
+                    <label for="usuario">Cantidad Máxima</label>
+                    <div class="input-group mb-3">
+                        <input placeholder="10" class="form-control" name="cheap_price" type="text" class="validate" required>
+                    </div>
+                    <button type="button-centered" class="btn btn-primary btn-lg">Submit</button>
+                </form>
+                <br>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Units</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Country</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $result = getCheapestFruits($_POST["cheap_price"]);
+
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo "<tr class=''>";
+                            echo "<td>" . $row["name"] . "</td>";
+                            echo "<td>" . $row["units"] . "</td>";
+                            echo "<td>" . $row["quantity"] . "</td>";
+                            echo "<td>" . $row["price"] . "</td>";
+                            echo "<td>" . $row["country"] . "</td>";
+                            echo "</tr>";
+                        }
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
     <!-- Artículo -->
     <section class="container">

@@ -1,0 +1,22 @@
+IF EXISTS (SELECT name FROM sysobjects 
+                       WHERE name = 'creaMaterial' AND type = 'P')
+                DROP PROCEDURE creaMaterial
+            GO
+            
+            CREATE PROCEDURE creaMaterial
+                @uclave NUMERIC(5,0),
+                @udescripcion VARCHAR(50),
+                @ucosto NUMERIC(8,2),
+                @uimpuesto NUMERIC(6,2)
+            AS
+                INSERT INTO Materiales VALUES(@uclave, @udescripcion, @ucosto, @uimpuesto)
+            GO
+
+¿Qué hace el primer bloque del código (bloque del IF)? 
+	Si ya existe el procedimiento creaMaterial borra el anterior y crea el nuevo.
+
+¿Para qué sirve la instrucción GO? 
+	Corre el procedimiento
+¿Explica que recibe como parámetro este Procedimiento y qué tabla modifica?
+	Modifica la tabla Materiales, y manda como parámetro clave, descripcion, costo, impuesto.
+
