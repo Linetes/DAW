@@ -44,3 +44,4 @@ function selectValue() {
     ajaxResponse.style.visibility="hidden";
     userInput.focus();
 }
+

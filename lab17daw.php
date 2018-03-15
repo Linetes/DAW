@@ -10,10 +10,8 @@ include("partials/_header.html");
     <header>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <div class="row">
-                        <h1 class="display-4">Lab 17: AJAX</h1>
-                        <br>
-                </div>
+                <h1 class="display-4">Lab 17: AJAX</h1>
+                <br>
             </div>
         </div>
     </header>
