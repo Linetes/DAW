@@ -21,7 +21,7 @@ include("partials/_header.html");
             <h1 class="display-4">Ejercicio AJAX</h1>
             <div class="alert alert-light" role="alert">
                 <form>
-                    <input type="text" id="userInput" onkeyup="sendRequest()">
+                    <input type="text" class="form-control" id="userInput" onkeyup="sendRequest()">
                 </form>
 
                 <div id="ajaxResponse"></div>
