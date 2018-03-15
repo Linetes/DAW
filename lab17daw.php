@@ -13,11 +13,23 @@ include("partials/_header.html");
                 <div class="row">
                         <h1 class="display-4">Lab 17: AJAX</h1>
                         <br>
-                        <h3>Para este Lab usaré la página login.php</h3>
                 </div>
             </div>
         </div>
     </header>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Ejercicio AJAX</h1>
+            <div class="alert alert-light" role="alert">
+                <form>
+                    <input type="text" id="userInput" onkeyup="sendRequest()">
+                </form>
+
+                <div id="ajaxResponse"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- Artículo -->
     <section class="container">

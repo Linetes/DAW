@@ -18,6 +18,8 @@ include("partials/_header.html");
         </div>
     </header>
 
+
+
     <!-- Artículo -->
     <section class="container">
         <div class="jumbotron jumbotron-fluid">

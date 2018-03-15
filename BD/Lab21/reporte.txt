@@ -20,3 +20,5 @@ IF EXISTS (SELECT name FROM sysobjects
 ¿Explica que recibe como parámetro este Procedimiento y qué tabla modifica?
 	Modifica la tabla Materiales, y manda como parámetro clave, descripcion, costo, impuesto.
 
+¿Qué ventajas tienen el utilizar Store Procedures en una aplicación cliente-servidor? 
+¿Qué ventajas tiene utilizar SP en un proyecto?
