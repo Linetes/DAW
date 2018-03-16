@@ -16,19 +16,6 @@ include("partials/_header.html");
         </div>
     </header>
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Ejercicio AJAX</h1>
-            <div class="alert alert-light" role="alert">
-                <form>
-                    <input type="text" class="form-control" id="userInput" onkeyup="sendRequest()">
-                </form>
-
-                <div id="ajaxResponse"></div>
-            </div>
-        </div>
-    </div>
-
     <!-- Artículo -->
     <section class="container">
         <div class="jumbotron jumbotron-fluid">
