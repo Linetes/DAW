@@ -56,47 +56,27 @@ include("partials/_header.html");
                     background-color: #f1f1f1;
                 }
             </style>
-            <h2>My Customers</h2>
-
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-
-            <table id="myTable">
-                <tr class="header">
-                    <th style="width:60%;">Name</th>
-                    <th style="width:40%;">Country</th>
-                </tr>
+            <h1>Por Nombre</h1>
+            <form action="lab19daw.php" method="POST">
+                <label for="usuario">Fruta que quieres</label>
+                <div class="input-group mb-3">
+                    <input placeholder="mango" class="form-control" id="myInput" onkeyup="myFunction()" type="text" class="validate" required>
+                </div>
+            </form>
+            <br>
+            <table class="table" id="myTable">
+                <thead>
                 <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Germany</td>
+                    <th scope="col">Name</th>
+                    <th scope="col">Units</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Country</th>
                 </tr>
-                <tr>
-                    <td>Berglunds snabbkop</td>
-                    <td>Sweden</td>
-                </tr>
-                <tr>
-                    <td>Island Trading</td>
-                    <td>UK</td>
-                </tr>
-                <tr>
-                    <td>Koniglich Essen</td>
-                    <td>Germany</td>
-                </tr>
-                <tr>
-                    <td>Laughing Bacchus Winecellars</td>
-                    <td>Canada</td>
-                </tr>
-                <tr>
-                    <td>Magazzini Alimentari Riuniti</td>
-                    <td>Italy</td>
-                </tr>
-                <tr>
-                    <td>North/South</td>
-                    <td>UK</td>
-                </tr>
-                <tr>
-                    <td>Paris specialites</td>
-                    <td>France</td>
-                </tr>
+                </thead>
+                <tbody>
+                <?php getFruits();?>
+                </tbody>
             </table>
 
             <script>
