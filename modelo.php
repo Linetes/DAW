@@ -274,6 +274,24 @@ function update_by_name($name2, $units2, $quantity2, $price2, $country2){
     }
 }
 
+function addFruit($name, $units, $quantity, $price, $country){
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "CALL p('$name', $units, $quantity, $price, '$country')";
+
+        if (mysqli_query($db,$sql)) {
+            echo "New record created succesfully";
+            disconnect($db);
+            return true;
+
+        } else {
+            echo "Error: " .$sql . "<br>" . mysqli_error($db);
+            disconnect($db);
+            return false;
+        }
+        disconnect($db);
+    }
+}
 
 //var_dump(login('cesar', 'basket'));
 ?>

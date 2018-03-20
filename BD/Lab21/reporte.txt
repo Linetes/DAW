@@ -27,7 +27,18 @@ Explica en tu reporte qué recibe como parámetro este Procedimiento y qué hace
 Eso ejecuta el procedimiento de queryMaterial y de parámetro pasa Lad como descripcion y 20 como costo. El procedimiento es un query que busca descripciones que tengan Lad y que el costo sea mayor a 20.
 
 ¿Qué ventajas tienen el utilizar Store Procedures en una aplicación cliente-servidor? 
+Sirve mucho cuando debes de usar el mismo código muchas veces para que sólo con un procedimiento puedas harcelo sin necesidad de volver a escribir código.
+
 ¿Qué ventajas tiene utilizar SP en un proyecto?
+Si quieres que el usuario ingrese a información con estos procedimientos es la mejor forma de meter datos a las tablas.
+
+DELIMITER //
+CREATE PROCEDURE p
+(IN nameN varchar(13),IN unitsN int(11), IN quantityN int(11), IN priceN int(11), IN countryN varchar(13))
+BEGIN
+  INSERT INTO Fruit(name,units, quantity, price, country) values(nameN,unitsN,quantityN,priceN,countryN);
+END //
+DELIMITER ;
 
 El ejercicio de aplicarlo a MySQL se puede encontrar en lab21bd.php
 http://localhost:8888/DAW-BD/lab21bd.php

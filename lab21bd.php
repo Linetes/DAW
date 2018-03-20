@@ -13,37 +13,7 @@ function insert_fruit() {
     //validacion de datos
     if(strlen($name) > 0 && strlen($units) > 0 && strlen($quantity) > 0 && strlen($price)) {
         if(is_numeric($quantity) && is_numeric($price)){
-            if(insertFruit($name, $units, $quantity, $price, $country)){
-                return true;
-            } else{
-                return false;
-            }
-        }
-    }
-}
-
-function delete_fruit() {
-
-    $name3 = htmlspecialchars($_POST['nameFruit3']);
-
-    if(delete_by_name($name3)){
-        return true;
-    } else{
-        return false;
-    }
-}
-
-function update_fruit() {
-    $name2 = htmlspecialchars($_POST['nameFruit2']);
-    $units2 = htmlspecialchars($_POST['unitsFruit2']);
-    $quantity2 = htmlspecialchars($_POST['quantityFruit2']);
-    $price2 = htmlspecialchars($_POST['priceFruit2']);
-    $country2 = htmlspecialchars($_POST['countryFruit2']);
-
-    //validacion de datos
-    if(strlen($name2) > 0 && strlen($units2) > 0 && strlen($quantity2) > 0 && strlen($price2)) {
-        if(is_numeric($quantity2) && is_numeric($price2)){
-            if(update_by_name($name2, $units2, $quantity2, $price2, $country2)){
+            if(addFruit($name, $units, $quantity, $price, $country)){
                 return true;
             } else{
                 return false;
@@ -69,12 +39,12 @@ function update_fruit() {
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Ejercicios con Fruit</h1>
+            <h1 class="display-4">Ejercicio con Fruit y Stored Procedure</h1>
             <div class="alert alert-light" role="alert">
                 <div class="row">
                     <div class="col">
                         <h1>Insertar Fruta</h1>
-                        <form action="lab16daw.php" method="POST">
+                        <form action="lab21bd.php" method="POST">
                             <label for="nameFruit">Name</label>
                             <div class="input-group mb-3">
                                 <input placeholder="Pera" class="form-control" name="nameFruit" type="text" class="validate" required>
@@ -99,45 +69,8 @@ function update_fruit() {
                             <button type="button-centered" class="btn btn-primary btn-lg">Submit</button>
                         </form>
                         <br>
-                        <h1>Modificar Fruta</h1>
-                        <form action="lab16daw.php" method="POST">
-                            <label for="nameFruit2">Name</label>
-                            <div class="input-group mb-3">
-                                <input placeholder="Pera" class="form-control" name="nameFruit2" type="text" class="validate" required>
-                            </div>
-                            <label for="unitsFruit2">Units</label>
-                            <div class="input-group mb-3">
-                                <input placeholder="4" class="form-control" name="unitsFruit2" type="text" class="validate" required>
-                            </div>
-                            <label for="quantityFruit2">Quantity</label>
-                            <div class="input-group mb-3">
-                                <input placeholder="11" class="form-control" name="quantityFruit2" type="text" class="validate" required>
-                            </div>
-                            <label for="priceFruit2">Price</label>
-                            <div class="input-group mb-3">
-                                <input placeholder="11" class="form-control" name="priceFruit2" type="text" class="validate" required>
-                            </div>
-                            <label for="countryFruit2">Country</label>
-                            <div class="input-group mb-3">
-                                <input placeholder="Mexico" class="form-control" name="countryFruit2" type="text" class="validate" required>
-                            </div>
-
-                            <button type="button-centered" class="btn btn-primary btn-lg">Submit</button>
-                        </form>
-                        <br>
-                        <h1>Borrar Fruta</h1>
-                        <form action="lab16daw.php" method="POST">
-                            <label for="nameFruit3">Name</label>
-                            <div class="input-group mb-3">
-                                <input placeholder="Pera" class="form-control" name="nameFruit3" type="text" class="validate" required>
-                            </div>
-
-                            <button type="button-centered" class="btn btn-primary btn-lg">Submit</button>
-                        </form>
                         <?php
                             insert_fruit();
-                            delete_fruit();
-                            update_fruit();
                         ?>
                     </div>
                     <div class="col">
@@ -158,75 +91,6 @@ function update_fruit() {
                         </table>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Ejercicios con Fruit</h1>
-            <div class="alert alert-light" role="alert">
-                <h1>Normal</h1>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Units</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Country</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php getFruits();?>
-                    </tbody>
-                </table>
-                <h1>Por Nombre</h1>
-                <form action="lab14daw.php" method="POST">
-                    <label for="usuario">Fruta que quieres</label>
-                    <div class="input-group mb-3">
-                        <input placeholder="mango" class="form-control" name="fruit_name" type="text" class="validate" required>
-                    </div>
-                    <button type="button-centered" class="btn btn-primary btn-lg">Submit</button>
-                </form>
-                <br>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Units</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Country</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php getFruitsByName(htmlspecialchars($_POST["fruit_name"]));?>
-                    </tbody>
-                </table>
-
-                <h1>Más Barato</h1>
-                <form action="lab14daw.php" method="POST">
-                    <label for="usuario">Cantidad Máxima</label>
-                    <div class="input-group mb-3">
-                        <input placeholder="10" class="form-control" name="cheap_price" type="text" class="validate" required>
-                    </div>
-                    <button type="button-centered" class="btn btn-primary btn-lg">Submit</button>
-                </form>
-                <br>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Units</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Country</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php getCheapestFruits(htmlspecialchars($_POST["cheap_price"])); ?>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
