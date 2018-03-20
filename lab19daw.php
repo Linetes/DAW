@@ -20,16 +20,15 @@ include("partials/_header.html");
     <div class="container">
         <h1 class="display-4"></h1>
         <div class="alert alert-light" role="alert">
-
             <h1>Por Nombre</h1>
             <form action="lab19daw.php" method="POST">
                 <label for="usuario">Fruta que quieres</label>
                 <div class="input-group mb-3">
-                    <input placeholder="mango" class="form-control" id="myInput" onkeyup="myFunction()" type="text" class="validate" required>
+                    <input placeholder="mango" class="form-control" id="myInput" type="text">
                 </div>
             </form>
             <br>
-            <table class="table" id="myTable">
+            <table class="table">
                 <thead>
                 <tr>
                     <th scope="col">Name</th>
@@ -39,7 +38,7 @@ include("partials/_header.html");
                     <th scope="col">Country</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="myTable">
                 <?php getFruits();?>
                 </tbody>
             </table>
