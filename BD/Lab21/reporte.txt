@@ -20,5 +20,14 @@ IF EXISTS (SELECT name FROM sysobjects
 ¿Explica que recibe como parámetro este Procedimiento y qué tabla modifica?
 	Modifica la tabla Materiales, y manda como parámetro clave, descripcion, costo, impuesto.
 
+
+EXECUTE queryMaterial 'Lad',20 
+
+Explica en tu reporte qué recibe como parámetro este Procedimiento y qué hace
+Eso ejecuta el procedimiento de queryMaterial y de parámetro pasa Lad como descripcion y 20 como costo. El procedimiento es un query que busca descripciones que tengan Lad y que el costo sea mayor a 20.
+
 ¿Qué ventajas tienen el utilizar Store Procedures en una aplicación cliente-servidor? 
 ¿Qué ventajas tiene utilizar SP en un proyecto?
+
+El ejercicio de aplicarlo a MySQL se puede encontrar en lab21bd.php
+http://localhost:8888/DAW-BD/lab21bd.php

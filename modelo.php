@@ -160,9 +160,19 @@ function getFruits() {
         $sql = "SELECT * FROM Fruit";
         $result = mysqli_query($db,$sql);
         disconnect($db);
-        return $result;
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<tr class=''>";
+                echo "<td>" . $row["name"] . "</td>";
+                echo "<td>" . $row["units"] . "</td>";
+                echo "<td>" . $row["quantity"] . "</td>";
+                echo "<td>" . $row["price"] . "</td>";
+                echo "<td>" . $row["country"] . "</td>";
+                echo "</tr>";
+            }
+        }
     }
-    return false;
 }
 
 function getFruitsByName($fruit_name) {
@@ -171,9 +181,19 @@ function getFruitsByName($fruit_name) {
         $sql = "SELECT * FROM Fruit WHERE name LIKE '%".$fruit_name."%'";
         $result = mysqli_query($db,$sql);
         disconnect($db);
-        return $result;
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<tr class=''>";
+                echo "<td>" . $row["name"] . "</td>";
+                echo "<td>" . $row["units"] . "</td>";
+                echo "<td>" . $row["quantity"] . "</td>";
+                echo "<td>" . $row["price"] . "</td>";
+                echo "<td>" . $row["country"] . "</td>";
+                echo "</tr>";
+            }
+        }
     }
-    return false;
 }
 
 
@@ -183,26 +203,77 @@ function getCheapestFruits($cheap_price) {
         $sql = "SELECT * FROM Fruit WHERE price <= '".$cheap_price."'";
         $result = mysqli_query($db,$sql);
         disconnect($db);
-        return $result;
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<tr class=''>";
+                echo "<td>" . $row["name"] . "</td>";
+                echo "<td>" . $row["units"] . "</td>";
+                echo "<td>" . $row["quantity"] . "</td>";
+                echo "<td>" . $row["price"] . "</td>";
+                echo "<td>" . $row["country"] . "</td>";
+                echo "</tr>";
+            }
+        }
     }
-    return false;
 }
 
 function insertFruit($name, $units, $quantity, $price, $country){
     $db = connect();
     if ($db != NULL) {
-        $sql = "INSERT INTO Fruit (name, units, quantity, price, country) Values (\"" . $name . "\",\"" . $units . "\",\"" . $quantity . "\",\"" . $price . "\",\"" . $country . "\");";
-        $result = mysqli_query($db,$sql);
+        $sql = "INSERT INTO Fruit (name, units, quantity, price, country) Values (\"" . $name . "\",\"" . $units . "\"," . $quantity . "," . $price . ",\"" . $country . "\");";
+
+        if (mysqli_query($db,$sql)) {
+            echo "New record created succesfully";
+            disconnect($db);
+            return true;
+
+        } else {
+            echo "Error: " .$sql . "<br>" . mysqli_error($db);
+            disconnect($db);
+            return false;
+        }
         disconnect($db);
-        return $result;
     }
-    return false;
 }
 
-//include "_header.html";
-//echo getTable("usuarios");
-//echo getTable("productos");
-//var_dump(login('lalo', 'hockey'));
-//var_dump(login('joaquin', 'basket'));
+function delete_by_name($fruit_name){
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "DELETE FROM Fruit WHERE name = '".$fruit_name."'";
+        if (mysqli_query($db,$sql)) {
+            echo "New record deleted succesfully";
+            disconnect($db);
+            return true;
+
+        } else {
+            echo "Error: " .$sql . "<br>" . mysqli_error($db);
+            disconnect($db);
+            return false;
+        }
+        disconnect($db);
+    }
+}
+
+function update_by_name($name2, $units2, $quantity2, $price2, $country2){
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "UPDATE Fruit SET units=$units2, quantity=$quantity2, price=$price2, country='$country2' WHERE name = '".$name2."'";
+
+        if (mysqli_query($db,$sql)) {
+            echo "New record modified succesfully";
+            disconnect($db);
+            return true;
+
+        } else {
+            echo "Error: " .$sql . "<br>" . mysqli_error($db);
+            disconnect($db);
+            return false;
+        }
+        disconnect($db);
+    }
+}
+
+
 //var_dump(login('cesar', 'basket'));
 ?>
