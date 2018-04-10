@@ -1,10 +1,10 @@
 <?php
 function connect() {
-    $ENV = "dev";
+    $ENV = "prod";
     if ($ENV == "dev") {
-        $mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","lab14", 8889);
+        $mysql = mysqli_connect("localhost","linetes","","Examen");
     } else  if ($ENV == "prod"){
-        $mysql = mysqli_connect("localhost","marcelo","marcelomarcelo","tienda");
+        $mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","lab14", 8889);
     }
     $mysql->set_charset("utf8");
     return $mysql;
@@ -38,10 +38,15 @@ function login($user, $passwd) {
     return false;
 }
 
-function getFruits() {
+function getIncidentes() {
     $db = connect();
     if ($db != NULL) {
-        $sql = "SELECT * FROM Fruit";
+        $sql = "SELECT i.id, l.lugar, t.tipo, i.fecha
+                FROM Incidentes i, Lugares l, Tipos t
+                WHERE i.idlugar = l.id
+                AND i.idtipo = t.id
+                ORDER BY i.id";
+                
         $result = mysqli_query($db,$sql);
         disconnect($db);
         $html = '';
@@ -49,11 +54,10 @@ function getFruits() {
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 $html .= '<tr class=\'\'>
-                          <td> '. $row["name"] .' </td>
-                          <td> '. $row["units"] .' </td>
-                          <td> '. $row["quantity"] .' </td>
-                          <td> '. $row["price"] .' </td>
-                          <td> '. $row["country"] .' </td>
+                          <td> '. $row["id"] .' </td>
+                          <td> '. $row["lugar"] .' </td>
+                          <td> '. $row["tipo"] .' </td>
+                          <td> '. $row["fecha"] .' </td>
                           </tr>';
             }
             echo $html;
@@ -61,53 +65,69 @@ function getFruits() {
     }
 }
 
-function getFruitsByName($fruit_name) {
+function getIncidentesTipo($tipo) {
     $db = connect();
     if ($db != NULL) {
-        $sql = "SELECT * FROM Fruit WHERE name LIKE '%".$fruit_name."%'";
+        $sql = "SELECT t.tipo, count(i.fecha) as 'Cantidad'
+                FROM Tipos t, Incidentes i
+                WHERE t.id = '$tipo'
+                AND i.idtipo = t.id
+                GROUP BY t.tipo";
+                
         $result = mysqli_query($db,$sql);
         disconnect($db);
+        $html = '';
 
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                echo "<tr class=''>";
-                echo "<td>" . $row["name"] . "</td>";
-                echo "<td>" . $row["units"] . "</td>";
-                echo "<td>" . $row["quantity"] . "</td>";
-                echo "<td>" . $row["price"] . "</td>";
-                echo "<td>" . $row["country"] . "</td>";
-                echo "</tr>";
+                $html .= '<tr class=\'\'>
+                          <td> '. $row["tipo"] .' </td>
+                          <td> '. $row["Cantidad"] .' </td>
+                          </tr>';
             }
+            echo $html;
         }
     }
 }
 
-
-function getCheapestFruits($cheap_price) {
+function getLugares() {
     $db = connect();
     if ($db != NULL) {
-        $sql = "SELECT * FROM Fruit WHERE price <= '".$cheap_price."'";
+        $sql = "SELECT id, lugar FROM Lugares ORDER BY lugar ASC";
         $result = mysqli_query($db,$sql);
         disconnect($db);
+        $html = '';
 
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                echo "<tr class=''>";
-                echo "<td>" . $row["name"] . "</td>";
-                echo "<td>" . $row["units"] . "</td>";
-                echo "<td>" . $row["quantity"] . "</td>";
-                echo "<td>" . $row["price"] . "</td>";
-                echo "<td>" . $row["country"] . "</td>";
-                echo "</tr>";
+                $html .= '<option value="'. $row["id"] .'"> '. $row["lugar"] .' </option>';
             }
+            echo $html;
         }
     }
 }
 
-function insertFruit($name, $units, $quantity, $price, $country){
+function getTipos() {
     $db = connect();
     if ($db != NULL) {
-        $sql = "INSERT INTO Fruit (name, units, quantity, price, country) Values (\"" . $name . "\",\"" . $units . "\"," . $quantity . "," . $price . ",\"" . $country . "\");";
+        $sql = "SELECT id, tipo FROM Tipos ORDER BY tipo ASC";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= '<option value="'. $row["id"] .'"> '. $row["tipo"] .' </option>';
+            }
+            echo $html;
+        }
+    }
+}
+
+function insertIn($lugar,$tipo){
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "INSERT INTO Incidentes (idlugar,idtipo) Values (\"" . $lugar . "\",\"" . $tipo . "\");";
 
         if (mysqli_query($db,$sql)) {
             echo "\nNew record created succesfully";
@@ -125,10 +145,10 @@ function insertFruit($name, $units, $quantity, $price, $country){
     return false;
 }
 
-function delete_by_name($fruit_name){
+function delete_by_id($idIn){
     $db = connect();
     if ($db != NULL) {
-        $sql = "DELETE FROM Fruit WHERE name = '".$fruit_name."'";
+        $sql = "DELETE FROM Incidentes WHERE id = '".$idIn."'";
         if (mysqli_query($db,$sql)) {
             echo "\nRecord deleted succesfully";
             disconnect($db);
@@ -144,48 +164,5 @@ function delete_by_name($fruit_name){
     }
     return false;
 }
-
-function update_by_name($name2, $units2, $quantity2, $price2, $country2){
-    $db = connect();
-    if ($db != NULL) {
-        $sql = "UPDATE Fruit SET units=$units2, quantity=$quantity2, price=$price2, country='$country2' WHERE name = '".$name2."'";
-
-        if (mysqli_query($db,$sql)) {
-            echo "\nRecord modified succesfully";
-            disconnect($db);
-            return true;
-
-        } else {
-            echo "Error: " .$sql . "<br>" . mysqli_error($db);
-            disconnect($db);
-            return false;
-        }
-        disconnect($db);
-        return false;
-    }
-    return false;
-}
-
-function addFruit($name, $units, $quantity, $price, $country){
-    $db = connect();
-    if ($db != NULL) {
-        $sql = "CALL p('$name', $units, $quantity, $price, '$country')";
-
-        if (mysqli_query($db,$sql)) {
-            echo "New record created succesfully";
-            disconnect($db);
-            return true;
-
-        } else {
-            echo "Error: " .$sql . "<br>" . mysqli_error($db);
-            disconnect($db);
-            return false;
-        }
-        disconnect($db);
-        return false;
-    }
-    return false;
-}
-
 //var_dump(login('cesar', 'basket'));
 ?>

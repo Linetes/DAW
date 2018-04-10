@@ -24,12 +24,12 @@ function sendRequest(){
 }
 
 function selectValue() {
-    var list=document.getElementById("list");
-    var userInput=document.getElementById("userInput");
-    var ajaxResponse=document.getElementById('ajaxResponse');
-    userInput.value=list.options[list.selectedIndex].text;
-    ajaxResponse.style.visibility="hidden";
-    userInput.focus();
+    
+    $.get("ajax.php", { id: document.getElementById('id').value })
+        .done(function( data ) {
+        var tabla=document.getElementById('datos');
+        tabla.innerHTML = data;
+    });
 }
 
 $(document).ready(function(){
