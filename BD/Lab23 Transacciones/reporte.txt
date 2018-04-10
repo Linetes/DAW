@@ -1,3 +1,6 @@
+--Cesar Buenfil Vazquez
+--Lab 23 Transacciones
+
 ¿Que pasa cuando deseas realizar esta consulta? 
 Sale lo mismo
 
