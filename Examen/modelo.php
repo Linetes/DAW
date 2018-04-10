@@ -4,7 +4,7 @@ function connect() {
     if ($ENV == "dev") {
         $mysql = mysqli_connect("localhost","linetes","","Examen");
     } else  if ($ENV == "prod"){
-        $mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","lab14", 8889);
+        $mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","Examenmodelo.php", 8889);
     }
     $mysql->set_charset("utf8");
     return $mysql;
