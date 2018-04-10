@@ -180,3 +180,8 @@ select descripcion, count(e.clave) as "Cantidad de veces entregado" , sum(e.Cant
 from entregan e, materiales m
 where m.Clave = e.Clave
 group by descripcion
+
+SELECT I.id, L.lugar, T.tipos, I.fecha
+FROM Incidentes I, Lugares L, Tipos T
+WHERE I.idlugar = L.id
+AND I.idtipo = L.id

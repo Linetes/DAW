@@ -1,0 +1,18 @@
+¿Que pasa cuando deseas realizar esta consulta? 
+Sale lo mismo
+
+¿Qué pasa cuando deseas realizar esta consulta? 
+En el usuario1 sale bien pero en el usuario2 no muestra los cambios y se queda en cargando.
+Explica por qué ocurre dicho evento. 
+
+¿Qué ocurrió y por qué? 
+Se borró lo que hace la Prueba2
+
+¿Para qué sirve el comando @@ERROR revisa la ayuda en línea? 
+Si el procedimiento anterior no tuvo errores regresa un 0, si no regresa un 1.
+
+¿Explica qué hace la transacción? 
+Inserta 3 clientes, si no deja dice: A transaction needs to be rolled back. Además hace rollback de la transacción. 
+
+¿Hubo alguna modificación en la tabla? Explica qué pasó y por qué. 
+No porque hubo un error y se hizo rollback de la transacción.

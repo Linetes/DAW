@@ -14,5 +14,5 @@ for($i=0; $i<count($words); $i++)
     }
 }
 if($size>0)
-    echo "<select id=\"list\" size=$size onclick=\"selectValue()\">$response</select>";
+    echo "<select class=\"custom-select\" id=\"list\" size=$size onclick=\"selectValue()\">$response</select>";
 ?>

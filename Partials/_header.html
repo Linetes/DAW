@@ -13,6 +13,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Quicksand|Roboto" rel="stylesheet">
 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   </head>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light rounded shadow">
@@ -58,7 +60,11 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="lab16daw.php">Lab 16: php y manipulación de registros de la base de datos</a>
                 <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab17">Lab RBAC</a>
+                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="lab17daw.php">Lab 17: AJAX</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab19daw.php">Lab 19: Jquery</a>
             </div>
           </li>
 
@@ -72,14 +78,23 @@
                 <a class="dropdown-item" href="lab2bd.php">Cuestionario 1: BD vs DBMS</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="lab3bd.php">Investigación 2: Evaluando los diferentes DBMS Relacionales con alcance empresarial con mayor penetración en el mercado</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="lab21bd.php">Laboratorio 21: Manipulación de datos usando Stored Procedures</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="tienda.php">Store<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="tienda.php">Store<span class="sr-only">(current)</span></a>
           </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="Examen">Examen<span class="sr-only">(current)</span></a>
+            </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+            <form action="index.php" method="POST" class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="userInput" onkeyup="sendRequest()">
+                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <div id="ajaxResponse"></div>
           <li class="nav-item">
             <?php if(!isset($_SESSION["usuario"])): ?>
               <li><a class="nav-link" href="register.php">Register<span class="sr-only">(current)</span></a></li>

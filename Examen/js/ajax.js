@@ -15,7 +15,7 @@ function getRequestObject() {
 }
 
 function sendRequest(){
-    $.get("ajax.php", { pattern: document.getElementById('userInput').value, func: "f1" })
+    $.get("ajax.php", { pattern: document.getElementById('userInput').value })
         .done(function( data ) {
             var ajaxResponse = document.getElementById('ajaxResponse');
             ajaxResponse.innerHTML = data;
