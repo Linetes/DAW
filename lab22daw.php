@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once("modelo.php");
+require_once("mailgun.php");
 include("partials/_header.html");
 ?>
 
