@@ -18,6 +18,12 @@ include("partials/_header.html");
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
+        <style>
+            #map {
+                height: 400px;
+                width: 100%;
+            }
+        </style>
         <h3>My Google Maps Demo</h3>
         <div id="map"></div>
         <script>
